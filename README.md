@@ -1,4 +1,4 @@
-# martial_escudero-website
+# martial_escudero-website - [NuxtJS](https://nuxtjs.org) Project
 
 ## Build Setup
 
