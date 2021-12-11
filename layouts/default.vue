@@ -106,9 +106,6 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
-
 .hiddenMouse {
   opacity: 0;
   transition: height 0ms 400ms, opacity 400ms 0ms;
@@ -117,10 +114,6 @@ export default {
 .activeMouse {
   opacity: 1;
   transition: height 0ms 0ms, opacity 600ms 0ms;
-}
-
-* {
-  font-family: 'Poppins';
 }
 
 *::selection{
