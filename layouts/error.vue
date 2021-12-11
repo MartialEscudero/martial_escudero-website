@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  metaInfo () {
+  head() {
     return {
       title : 'Error 404 !',
     }
