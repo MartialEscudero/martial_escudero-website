@@ -6,6 +6,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
 
+
       { name: 'viewport',     content: 'width=device-width, initial-scale=1' },
       { name: 'author',       content: 'Martial Escudero' },
       { name: 'copyright',    content: 'Martial Escudero' },
@@ -62,6 +63,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    vendor: ["aos"]
+    vendor: ["aos"],
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
   },
+  
 }
