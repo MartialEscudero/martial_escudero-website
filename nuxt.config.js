@@ -30,6 +30,9 @@ export default {
       { rel: 'preconnect',                    href: 'https://fonts.gstatic.com' },
       { rel: 'stylesheet',                    href: 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,800&display=swap' },
     ],
+    script: [
+      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=UA-164716890-1' }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
