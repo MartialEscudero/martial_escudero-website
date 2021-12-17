@@ -59,6 +59,7 @@ export default {
   background: #93C5FD;
   color: #0e0e0e;
 }
+
 .card {
   background: #202020;
   border-radius: 20px;
