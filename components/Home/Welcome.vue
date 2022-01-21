@@ -13,8 +13,9 @@
           data-period="1000" 
           data-rotate='[ 
             "Web Developer", 
-            "Web Designer", 
             "Front-End Developer",
+            "JS Developer",
+            "Web Designer", 
             "Video Maker", 
             "Graphic Designer",
             "Tout est en anglais juste pour le style"

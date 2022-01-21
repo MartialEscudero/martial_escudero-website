@@ -7,14 +7,14 @@
       <h1 class="text-center text-4xl font-bold" data-aos="fade-right">Moi.</h1>
       <div class="text-justify" data-aos="fade-left">
         <p>
-          Actuellement en <a rel="noopener" target="_blank" href="https://www.sciences.unilim.fr/tic/metiers-de-linformatique-conduite-de-projet-technologie-du-developpement-web/">Licence Professionnelle - Métiers de l'informatique : Conduite de projet - Technologie du développement web</a> à l’Université de Limoges, je suis diplômé d'un <a rel="noopener" target="_blank" href="https://www.sciences.unilim.fr/tic/deust-webmaster-metiers-internet/">DEUST Webmaster & Métiers de l'Internet</a>.<br>
+          Actuellement en <a rel="noopener" target="_blank" href="/assets/LPMI.png">Licence Professionnelle - Métiers de l'informatique : Conduite de projet - Technologie du développement web</a> à l’Université de Limoges, je suis diplômé d'un <a rel="noopener" target="_blank" href="https://www.sciences.unilim.fr/tic/deust-webmaster-metiers-internet/">DEUST Webmaster & Métiers de l'Internet</a>.<br>
           <br>
           Vous pouvez trouver certains de mes projets <b>actuels</b> sous l'entité <a rel="noopener" target="_blank" href="https://www.instagram.com/le4cent4/">"4cent4"</a>.<br>
           Mes anciens projets audiovisuels sous l'entité <a rel="noopener" target="_blank" href="https://www.behance.net/pureproduction">"Pure. Production"</a>.        
         </p>
         <br>
         <p class="mb-10">
-          Étudiant investie et dynamique, je possède une très bonne connaissance du monde du web et des nouvelles technologies.
+          Étudiant investi et dynamique, je possède une très bonne connaissance du monde du web et des nouvelles technologies.
         </p>
         <div id="wrapper">
           <a class="rounded-full" rel="noopener" target="_blank" :href="cvpdf.link">

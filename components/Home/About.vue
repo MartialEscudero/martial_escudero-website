@@ -11,7 +11,7 @@
           <NuxtLink class="btn text-white font-bold py-2 px-4 rounded-full mt-14" tag="button" to="/cv">Voir mon CV</NuxtLink>
         </div>
         <p class="mt-14" data-aos="fade-up">
-          Actuellement en <a rel="noopener" target="_blank" href="https://www.sciences.unilim.fr/tic/metiers-de-linformatique-conduite-de-projet-technologie-du-developpement-web/">Licence Professionnelle - Métiers de l'informatique : Conduite de projet - Technologie du développement web</a> à l’Université de Limoges, je suis diplômé d'un <a rel="noopener" target="_blank" href="https://www.sciences.unilim.fr/tic/deust-webmaster-metiers-internet/">DEUST Webmaster & Métiers de l'Internet</a>.<br>
+          Actuellement en <a rel="noopener" target="_blank" href="/assets/LPMI.png">Licence Professionnelle - Métiers de l'informatique : Conduite de projet - Technologie du développement web</a> à l’Université de Limoges, je suis diplômé d'un <a rel="noopener" target="_blank" href="https://www.sciences.unilim.fr/tic/deust-webmaster-metiers-internet/">DEUST Webmaster & Métiers de l'Internet</a>.<br>
           <br>
           Vous pouvez trouver certains de mes projets <b>actuels</b> sous l'entité <a rel="noopener" target="_blank" href="https://www.instagram.com/le4cent4/">"4cent4"</a>.<br>
           Mes anciens projets audiovisuels sous l'entité <a rel="noopener" target="_blank" href="https://www.behance.net/pureproduction">"Pure. Production"</a>.
