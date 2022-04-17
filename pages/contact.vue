@@ -76,19 +76,21 @@
 import emailjs from 'emailjs-com';
 
 export default {
-  head: {
-    title: 'Me Contacter | Martial Escudero',
-    meta: [
-      { hid: 'description',           name: 'description',          content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
-      
-      { hid: 'og:url',                name: 'og:url',               content: 'https://www.martialescudero.com/contact' },
-      { hid: 'og:title',              name: 'og:title',             content: 'Me Contacter | Martial Escudero' },
-      { hid: 'og:description',        name: 'og:description',       content: 'Me Contacter - Martial Escudero - Étudiant & Développeur Web.' },
+  head() {
+    return {
+      title: 'Me Contacter | Martial Escudero',
+      meta: [
+        { hid: 'description',           name: 'description',          content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
+        
+        { hid: 'og:url',                property: 'og:url',               content: 'https://www.martialescudero.com/contact' },
+        { hid: 'og:title',              property: 'og:title',             content: 'Me Contacter | Martial Escudero' },
+        { hid: 'og:description',        property: 'og:description',       content: 'Me Contacter - Martial Escudero - Étudiant & Développeur Web.' },
 
-      { hid: 'twitter:url',           name: 'twitter:url',          content: 'https://www.martialescudero.com/contact' },
-      { hid: 'twitter:title',         name: 'twitter:title',        content: 'Me Contacter | Martial Escudero' },
-      { hid: 'twitter:description',   name: 'twitter:description',  content: 'Me Contacter - Martial Escudero - Étudiant & Développeur Web.' },
-    ],
+        { hid: 'twitter:url',           property: 'twitter:url',          content: 'https://www.martialescudero.com/contact' },
+        { hid: 'twitter:title',         property: 'twitter:title',        content: 'Me Contacter | Martial Escudero' },
+        { hid: 'twitter:description',   property: 'twitter:description',  content: 'Me Contacter - Martial Escudero - Étudiant & Développeur Web.' },
+      ],
+    }
   },
   data: () => ({
     uuid: null,

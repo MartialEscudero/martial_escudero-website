@@ -17,11 +17,17 @@ export default {
       
       { hid: 'description',     name: 'description',      content: 'Site Portofolio et Labo de Martial Escudero - Étudiant & Développeur Web.' },
 
-      { hid: 'og:type',         name: 'og:type',          content: 'website' },
-      { hid: 'og:image',        name: 'og:image',         content: 'https://res.cloudinary.com/do5ghqhjj/image/upload/v1638793628/martialescudero_838464f9ed.jpg' },   
+      { hid: 'og:type',         property: 'og:type',          content: 'website' },
+      { hid: 'og:url',          property: 'og:url',           content: 'https://www.martialescudero.com' },
+      { hid: 'og:title',        property: 'og:title',         content: 'Martial Escudero | Étudiant - Développeur Web' },
+      { hid: 'og:description',  property: 'og:description',   content: 'Site Portofolio et Labo de Martial Escudero - Étudiant & Développeur Web.' },
+      { hid: 'og:image',        property: 'og:image',         content: 'https://res.cloudinary.com/do5ghqhjj/image/upload/v1638793628/martialescudero_838464f9ed.jpg' },   
 
-      { hid: 'twitter:card',    name: 'twitter:card',     content: 'summary_large_image' },
-      { hid: 'twitter:image',   name: 'twitter:image',    content: 'https://res.cloudinary.com/do5ghqhjj/image/upload/v1638793628/martialescudero_838464f9ed.jpg' },  
+      { hid: 'twitter:card',          property: 'twitter:card',         content: 'summary_large_image' },
+      { hid: 'twitter:url',           property: 'twitter:url',          content: 'https://www.martialescudero.com' },
+      { hid: 'twitter:title',         property: 'twitter:title',        content: 'Martial Escudero | Étudiant - Développeur Web' },
+      { hid: 'twitter:description',   property: 'twitter:description',  content: 'Site Portofolio et Labo de Martial Escudero - Étudiant & Développeur Web.' },
+      { hid: 'twitter:image',         property: 'twitter:image',        content: 'https://res.cloudinary.com/do5ghqhjj/image/upload/v1638793628/martialescudero_838464f9ed.jpg' },  
     ],
     link: [
       { rel: 'icon',                          type: 'image/x-icon',   href: '/favicon.ico' },

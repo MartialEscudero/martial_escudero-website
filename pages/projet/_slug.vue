@@ -32,13 +32,13 @@ export default {
       meta: [
         { hid: 'description',           name: 'description',          content: 'Cliquez pour découvir le projet : ' + this.projet.Titre },
 
-        { hid: 'og:url',                name: 'og:url',               content: 'https://www.martialescudero.com/' },
-        { hid: 'og:title',              name: 'og:title',             content: this.projet.Titre + ' | Martial Escudero' + this.projet.Slug },
-        { hid: 'og:description',        name: 'og:description',       content: 'Cliquez pour découvir le projet : ' + this.projet.Titre },
+        { hid: 'og:url',                property: 'og:url',               content: 'https://www.martialescudero.com/' },
+        { hid: 'og:title',              property: 'og:title',             content: this.projet.Titre + ' | Martial Escudero' + this.projet.Slug },
+        { hid: 'og:description',        property: 'og:description',       content: 'Cliquez pour découvir le projet : ' + this.projet.Titre },
 
-        { hid: 'twitter:url',           name: 'twitter:url',          content: 'https://www.martialescudero.com/' + this.projet.Slug },
-        { hid: 'twitter:title',         name: 'twitter:title',        content: this.projet.Titre + ' | Martial Escudero' },
-        { hid: 'twitter:description',   name: 'twitter:description',  content: 'Cliquez pour découvir le projet : ' + this.projet.Titre },
+        { hid: 'twitter:url',           property: 'twitter:url',          content: 'https://www.martialescudero.com/' + this.projet.Slug },
+        { hid: 'twitter:title',         property: 'twitter:title',        content: this.projet.Titre + ' | Martial Escudero' },
+        { hid: 'twitter:description',   property: 'twitter:description',  content: 'Cliquez pour découvir le projet : ' + this.projet.Titre },
       ],
     }
   },

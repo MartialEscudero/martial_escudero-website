@@ -147,19 +147,21 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-  head: {
-    title: 'Mon CV | Martial Escudero',
-    meta: [
-      { hid: 'description',           name: 'description',          content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
+  head() {
+    return {
+      title: 'Mon CV | Martial Escudero',
+      meta: [
+        { hid: 'description',           name: 'description',          content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
 
-      { hid: 'og:url',                name: 'og:url',               content: 'https://www.martialescudero.com/cv' },
-      { hid: 'og:title',              name: 'og:title',             content: 'Mon CV | Martial Escudero' },
-      { hid: 'og:description',        name: 'og:description',       content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
+        { hid: 'og:url',                property: 'og:url',               content: 'https://www.martialescudero.com/cv' },
+        { hid: 'og:title',              property: 'og:title',             content: 'Mon CV | Martial Escudero' },
+        { hid: 'og:description',        property: 'og:description',       content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
 
-      { hid: 'twitter:url',           name: 'twitter:url',          content: 'https://www.martialescudero.com/cv' },
-      { hid: 'twitter:title',         name: 'twitter:title',        content: 'Mon CV | Martial Escudero' },
-      { hid: 'twitter:description',   name: 'twitter:description',  content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
-    ],
+        { hid: 'twitter:url',           property: 'twitter:url',          content: 'https://www.martialescudero.com/cv' },
+        { hid: 'twitter:title',         property: 'twitter:title',        content: 'Mon CV | Martial Escudero' },
+        { hid: 'twitter:description',   property: 'twitter:description',  content: 'Mon CV - Martial Escudero - Étudiant & Développeur Web.' },
+      ],
+    }
   },
   computed: {
     ...mapGetters('store',['cvpdf']),
