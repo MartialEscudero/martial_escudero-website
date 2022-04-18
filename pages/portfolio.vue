@@ -8,10 +8,10 @@
         Si vous voyez ce texte, c'est qu'il y a eu un problème lors de l'appel de l'API.<br>
       </p>
       <p class="mt-5 error">
-        Je vous invite à <a rel="noopener" class="cursor-pointer" @click="refreshPage">rafraîchir</a> la page ou alors revenir plus tard.
+        Je vous invite à <a rel="noopener" class="transition ease-in duration-200 cursor-pointer" @click="refreshPage">rafraîchir</a> la page ou alors revenir plus tard.
       </p>
       <p class="mt-5 error">
-        Vous pouvez aussi <a rel="noopener" href="http://urlr.me/rnjv1" target="_blank">cliquer ici</a> pour patienter.
+        Vous pouvez aussi <a rel="noopener" class="transition ease-in duration-200" href="http://urlr.me/rnjv1" target="_blank">cliquer ici</a> pour patienter.
       </p>
     </div>
     <div v-else class="container mx-auto grid xl:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-0 gap-y-20 mt-32 xl:mb-10">
@@ -68,7 +68,6 @@ export default {
 }
 
 .error a:hover {
-  transition: .5s;
   background: #93C5FD;
   color: #0e0e0e;
 }

@@ -8,10 +8,10 @@
         Si vous voyez ce texte, c'est qu'il y a eu un problème lors de l'appel de l'API.<br>
       </p>
       <p class="mt-5 error">
-        Je vous invite à <a rel="noopener" class="cursor-pointer" @click="refreshPage">rafraîchir</a> la page ou alors revenir plus tard.
+        Je vous invite à <a rel="noopener" class="transition ease-in duration-200 cursor-pointer" @click="refreshPage">rafraîchir</a> la page ou alors revenir plus tard.
       </p>
       <p class="mt-5 error">
-        Vous pouvez aussi <a rel="noopener" href="http://urlr.me/rnjv1" target="_blank">cliquer ici</a> pour patienter.
+        Vous pouvez aussi <a rel="noopener" class="transition ease-in duration-200" href="http://urlr.me/rnjv1" target="_blank">cliquer ici</a> pour patienter.
       </p>
     </div>
     <div v-else class="container mx-auto grid xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-x-0 gap-y-24 md:mt-32 sm:-mt-2">
@@ -28,7 +28,7 @@
     <div class="grid grid-cols-1 mt-28" data-aos="fade-up">
       <div class="mx-auto">
         <p class="text-center text-sm mb-4 text-gray-500">et plus ...</p>
-        <NuxtLink class="btn text-white font-bold py-2 px-4 rounded-full" tag="button" to="/portfolio">Découvrir tous mes projets</NuxtLink>
+        <NuxtLink class="transition ease-in duration-200 btn text-white font-bold py-2 px-4 rounded-full" tag="button" to="/portfolio">Découvrir tous mes projets</NuxtLink>
       </div>
     </div>
   </div>
@@ -55,7 +55,6 @@ export default {
 }
 
 .error a:hover {
-  transition: .5s;
   background: #93C5FD;
   color: #0e0e0e;
 }
@@ -83,7 +82,6 @@ export default {
 }
 
 .btn {
-  transition: .5s;
   color: #202020;
   background: #93C5FD;
 }

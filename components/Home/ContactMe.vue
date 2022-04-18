@@ -5,7 +5,7 @@
         Vous avez une question ? Un projet ? Ou autre ?
       </h1>
       <div class="mx-auto mt-16 mb-20" data-aos="fade-up">
-        <NuxtLink class="btn text-white font-bold text-2xl py-2 px-5 rounded-full" tag="button" to="/contact">Me contacter</NuxtLink>
+        <NuxtLink class="transition ease-in duration-200 btn text-white font-bold text-2xl py-2 px-5 rounded-full" tag="button" to="/contact">Me contacter</NuxtLink>
       </div>
     </div>
   </div>
@@ -25,7 +25,6 @@
 }
 
 .btn {
-  transition: .5s;
   color: #202020;
   background: #93C5FD;
 }

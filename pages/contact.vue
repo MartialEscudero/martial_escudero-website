@@ -6,28 +6,28 @@
         <div v-show="displayName == true">
           <input v-model="name" @keydown.enter="setName()" class="input xl:text-4xl sm:text-lg" placeholder="Nom" type="text" name="user_name" data-aos="fade-up">
           <div class="flex mt-10">
-            <a @click="setName()" class="m-auto xl:text-2xl" data-aos="fade-up">Suivant</a>
+            <a @click="setName()" class="transition ease-in duration-200 m-auto xl:text-2xl" data-aos="fade-up">Suivant</a>
           </div>
           <div class="text-gray-500" data-aos="fade-up">
-            <p class="contact text-center xl:text-sm sm:text-xs">ou via <a class="font-bold" href="mailto:martial.escudero@gmail.com">martial.escudero@gmail.com</a></p>
+            <p class="contact text-center xl:text-sm sm:text-xs">ou via <a class="transition ease-in duration-200 font-bold" href="mailto:martial.escudero@gmail.com">martial.escudero@gmail.com</a></p>
           </div>
         </div>
         <div v-show="displayEmail == true">
           <input placeholder="E-mail" @keydown.enter="setEmail()" class="input xl:text-4xl sm:text-lg" v-model="email" type="email" name="user_email">
           <div class="flex mt-10">
-            <a @click="setEmail()" class="m-auto xl:text-2xl">Suivant</a>
+            <a @click="setEmail()" class="transition ease-in duration-200 m-auto xl:text-2xl">Suivant</a>
           </div>
         </div>
         <div v-show="displaySubject == true">
           <input placeholder="Sujet" @keydown.enter="setSubject()" class="input xl:text-4xl sm:text-lg" v-model="subject" name="user_subject">
           <div class="flex mt-10">
-            <a @click="setSubject()" class="m-auto xl:text-2xl">Suivant</a>
+            <a @click="setSubject()" class="transition ease-in duration-200 m-auto xl:text-2xl">Suivant</a>
           </div>
         </div>
         <div v-show="displayMessage == true">
           <textarea placeholder="Message" class="textarea xl:text-xl sm:text-lg" v-model="message" type="text" name="message" rows="2"></textarea>
           <div class="flex mt-10">
-            <a @click="setMessage()" class="m-auto xl:text-2xl">Suivant</a>
+            <a @click="setMessage()" class="transition ease-in duration-200 m-auto xl:text-2xl">Suivant</a>
           </div>
         </div>
         <div class="recap sm:mt-24 sm:mb-10" v-show="displayRecap == true">
@@ -52,7 +52,7 @@
           </div>
           <div v-show="displayLoading == false" class="xl:p-4 sm:p-2 grid grid-cols-2 mb-10">
             <div>
-              <a @click="cancel();" class="text-2xl">Annuler</a>
+              <a @click="cancel();" class="transition ease-in duration-200 text-2xl">Annuler</a>
             </div>
             <div>
               <input type="submit" value="Envoyer" class="send text-2xl float-right">

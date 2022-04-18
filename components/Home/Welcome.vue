@@ -17,7 +17,6 @@
             "JS Developer",
             "Web Designer", 
             "Video Maker", 
-            "Graphic Designer",
             "Tout est en anglais juste pour le style"
           ]'>
         </h3>
