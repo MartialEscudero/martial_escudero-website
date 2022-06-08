@@ -24,7 +24,7 @@
     <div id="nav-right" class="hidden">
       <div class="flex h-screen">
         <div class="m-auto text-md">
-          <p v-if="select == 'base'">Coucou.<br>Passez votre souris sur les différentes catégories du menu.</p>
+          <p v-if="select == 'base'">Hello.<br>Passez votre souris sur les différentes catégories du menu.</p>
           <p v-if="select == 'home'">{{text.home}}</p>
           <p v-if="select == 'service'">{{text.service}}</p>
           <p v-if="select == 'about'">{{text.about}}</p>
