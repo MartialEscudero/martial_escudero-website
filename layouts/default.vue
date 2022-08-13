@@ -1,36 +1,38 @@
 <template>
   <div id="top">
     <div id="nav-left" class="hidden">
-      <div class="flex h-screen">
-        <div class="m-auto text-4xl font-bold">
-          <div class="title-nav">
-            <a class="btn-nav" v-on:mouseover="select = 'home'"><NuxtLink to="/">Home</NuxtLink></a>
-          </div>
-          <div class="title-nav">
-            <a class="btn-nav" v-on:mouseover="select = 'about'"><NuxtLink to="/cv">À Propos</NuxtLink></a>
-          </div>
-          <div class="title-nav">
-            <a class="btn-nav" v-on:mouseover="select = 'portfolio'"><NuxtLink to="/portfolio">Portfolio</NuxtLink></a>
-          </div>
-          <div class="title-nav">
-            <a class="btn-nav" v-on:mouseover="select = 'labo'"><NuxtLink to="/labo">Le Labo</NuxtLink></a>
-          </div>
-          <div class="title-nav">
-            <a class="btn-nav" v-on:mouseover="select = 'contact'"><NuxtLink to="/contact">Contact</NuxtLink></a>
+      <client-only>
+        <div class="flex h-screen">
+          <div class="m-auto text-4xl font-bold">
+            <div class="title-nav">
+              <a class="btn-nav" v-on:mouseover="select = 'home'"><NuxtLink to="/">Home</NuxtLink></a>
+            </div>
+            <div class="title-nav">
+              <a class="btn-nav" v-on:mouseover="select = 'about'"><NuxtLink to="/cv">À Propos</NuxtLink></a>
+            </div>
+            <div class="title-nav">
+              <a class="btn-nav" v-on:mouseover="select = 'portfolio'"><NuxtLink to="/portfolio">Portfolio</NuxtLink></a>
+            </div>
+            <div class="title-nav">
+              <a class="btn-nav" v-on:mouseover="select = 'labo'"><NuxtLink to="/labo">Le Labo</NuxtLink></a>
+            </div>
+            <div class="title-nav">
+              <a class="btn-nav" v-on:mouseover="select = 'contact'"><NuxtLink to="/contact">Contact</NuxtLink></a>
+            </div>
           </div>
         </div>
-      </div>
+      </client-only>
     </div>
     <div id="nav-right" class="hidden">
       <div class="flex h-screen">
         <div class="m-auto text-md">
           <p v-if="select == 'base'">Hello.<br>Passez votre souris sur les différentes catégories du menu.</p>
-          <p v-if="select == 'home'">{{text.home}}</p>
-          <p v-if="select == 'service'">{{text.service}}</p>
-          <p v-if="select == 'about'">{{text.about}}</p>
-          <p v-if="select == 'portfolio'">{{text.portfolio}}</p>
-          <p v-if="select == 'contact'">{{text.contact}}</p>
-          <p v-if="select == 'labo'">{{text.labo}}</p>
+          <p v-if="select == 'home'">{{ text.home }}</p>
+          <p v-if="select == 'service'">{{ text.service }}</p>
+          <p v-if="select == 'about'">{{ text.about }}</p>
+          <p v-if="select == 'portfolio'">{{ text.portfolio }}</p>
+          <p v-if="select == 'contact'">{{ text.contact }}</p>
+          <p v-if="select == 'labo'">{{ text.labo }}</p>
         </div>
       </div>
     </div>
@@ -68,7 +70,7 @@
     </div>
     <footer v-if="getUrl()" class="mb-4">
       <div class="text-center text-xs">
-        &copy; 2020 - {{date}} Martial Escudero. Tous droits réservés.
+        &copy; 2020 - {{ date }} Martial Escudero. Tous droits réservés.
       </div>
     </footer>
   </div>
@@ -198,7 +200,7 @@ body {
   color: white;
   /* cursor: none; */
   -ms-overflow-style: none;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {
@@ -219,7 +221,7 @@ body::-webkit-scrollbar {
 
 #nav img {
   margin: 45px 0 0 50px;
-  user-select: none; 
+  user-select: none;
 }
 
 #hamburger {
@@ -343,7 +345,7 @@ body::-webkit-scrollbar {
   bottom: 0;
   left: 0;
   margin: auto;
-  
+
   width :34px;
   height: 55px;
 }
@@ -382,7 +384,7 @@ body::-webkit-scrollbar {
 }
 
 @media screen and (max-width: 640px) {
-  
+
   #nav-left {
     color: #0e0e0e;
     background-color: white;

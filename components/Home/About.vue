@@ -6,7 +6,7 @@
     <div class="container mx-auto grid xl:grid-cols-2 lg:grid-cols-1 gap-4 lg:mt-32 sm:-mt-10">
       <div class="mx-auto text-justify xl:m-0 sm:ml-5 sm:mr-5">
         <h2 class="text-3xl font-bold mt-10" data-aos="fade-up">Martial Escudero</h2>
-        <h3 class="text-2xl" data-aos="fade-up">{{age}} ans</h3>
+        <h3 class="text-2xl" data-aos="fade-up">{{ age }} ans</h3>
         <div data-aos="fade-up">
           <NuxtLink class="transition ease-in duration-200 btn text-white font-bold py-2 px-4 rounded-full mt-14" tag="button" to="/cv">Voir mon CV</NuxtLink>
         </div>
