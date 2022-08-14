@@ -8,5 +8,6 @@
     <div>
         <HomepageWelcome/>
         <HomepageAbout/>
+        <HomepageProjetcs/>
     </div>
 </template>

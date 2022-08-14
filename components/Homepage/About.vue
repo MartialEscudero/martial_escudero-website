@@ -19,9 +19,9 @@ function getAge(dtn: string) {
 </script>
 
 <template>
-    <div class="container px-5 md:px-0 mx-auto mt-4">
+    <div class="container px-5 md:px-0 mx-auto pt-10">
         <h2 class="text-5xl text-center sm:text-left">À Propos</h2>
-        <div class="grid grid-cols-1 xl:grid-cols-2 mt-20 mb-10 xl:mt-52 xl:mb-32">
+        <div class="grid grid-cols-1 xl:grid-cols-2 my-20 xl:my-32">
             <div class="space-y-16">
                 <div>
                     <h3 class="text-3xl font-bold">Martial Escudero</h3>
@@ -30,7 +30,7 @@ function getAge(dtn: string) {
                 <div>
                     <NuxtLink class="button" to="/cv">Voir mon CV</NuxtLink>
                 </div>
-                <p>
+                <p class="text-justify sm:text-left">
                     Actuellement <span class="font-bold">Développeur Front-End</span> chez 
                     <a class="hypertext" href="https://www.nexton-agency.com/" rel="noopener" target="_blank">NEXTON</a>
                     , je suis diplômé d'une 
@@ -40,7 +40,7 @@ function getAge(dtn: string) {
                     tout deux à l’Université de Limoges.
                 </p>
                 <p>Passionné et autodidacte depuis toujours, je saurais m'investir et vous accompagnez dans vos projets.</p>
-                <div class="flex gap-10">
+                <div class="flex justify-center sm:justify-start gap-10">
                     <a href="https://www.linkedin.com/in/martial-escudero/" rel="noopener" target="_blank">
                         <svg class="w-10 h-10 fill-white hover:fill-blue-300 transition ease-in-out duration-200" viewBox="0 0 23.273 23.273">
                             <path d="M11.637,0A11.637,11.637,0,1,0,23.273,11.637,11.638,11.638,0,0,0,11.637,0ZM8.255,17.591H5.421V9.065H8.255ZM6.838,7.9H6.82a1.477,1.477,0,1,1,.037-2.946A1.478,1.478,0,1,1,6.838,7.9Zm11.636,9.691H15.641V13.03c0-1.146-.41-1.928-1.436-1.928a1.551,1.551,0,0,0-1.454,1.036,1.941,1.941,0,0,0-.093.692v4.762H9.824s.037-7.726,0-8.526h2.834v1.207a2.814,2.814,0,0,1,2.554-1.407c1.865,0,3.263,1.219,3.263,3.837Zm0,0" />
