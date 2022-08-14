@@ -1,7 +1,7 @@
-<script>
-export default {
-
-}
+<script lang="ts" setup>
+    useHead({
+        title: 'Développeur Front-End',
+    })
 </script>
 
 <template>

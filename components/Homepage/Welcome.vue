@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { ChevronDoubleDownIcon } from "@heroicons/vue/outline"
 
 textRotate([
