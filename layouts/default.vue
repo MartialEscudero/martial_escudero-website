@@ -26,7 +26,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="h-screen scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-slate-700">
         <LayoutNavbar />
         <main>
             <slot />
