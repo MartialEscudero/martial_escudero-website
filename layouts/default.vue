@@ -1,6 +1,10 @@
 <script lang="ts">
 export default {
-
+    head() {
+        return {
+            htmlAttrs: { lang: 'fr' },
+        }
+    },
 }
 </script>
 

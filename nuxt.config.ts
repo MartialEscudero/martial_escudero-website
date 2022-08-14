@@ -10,6 +10,10 @@ export default defineNuxtConfig({
         postcss: {
             postcssOptions: require("./postcss.config.js"),
         },
+
+        transpile: [
+            "@heroicons/vue"
+        ],
     },
     
     buildModules: [
