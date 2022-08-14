@@ -9,5 +9,6 @@
         <HomepageWelcome/>
         <HomepageAbout/>
         <HomepageProjetcs/>
+        <HomepageContactMe/>
     </div>
 </template>

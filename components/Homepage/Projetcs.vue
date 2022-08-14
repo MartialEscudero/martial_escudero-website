@@ -18,7 +18,7 @@ export default {
 <template>
     <div class="container px-5 md:px-0 mx-auto pt-10">
         <h2 class="text-5xl text-center sm:text-left">Derniers projets</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 my-20 gap-16 md:gap-16 xl:gap-y-28 xl:gap-x-40">
+        <div class="grid grid-cols-1 md:grid-cols-2 mt-20 mb-10 lg:my-20 gap-16 md:gap-16 xl:gap-y-28 xl:gap-x-40">
             <NuxtLink 
                 :to="'/projet/' + project.attributes.Slug" 
                 v-for="project in setProjects(projects)"
@@ -30,6 +30,10 @@ export default {
                     <p class="text-xs lg:text-sm text-blue-300">{{ project.attributes.Type }}</p>
                 </div>
             </NuxtLink>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+            <p class="text-sm text-gray-500 my-5 text-center">et plus ...</p>
+            <NuxtLink class="button" to="/portfolio">Découvrir tous mes projets</NuxtLink>
         </div>
     </div>
 </template>
