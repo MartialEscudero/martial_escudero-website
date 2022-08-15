@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    let isOpen = ref(false)
+    let isOpen = ref(false);
 
     let isSelect = ref("base");
 
@@ -9,11 +9,11 @@
         portfolio: "Sur mon Portfolio, vous retrouvez différents projets que j'ai pu réaliser dans le domaine du Développement Web, du Graphisme ou encore de l'Audiovisuel.",
         contact: "Si vous avez une question, un projet ou autre, vous pouvez compléter ce formulaire de contact (allez le voir il est tout beau) ou contactez-moi à l'adresse suivante : martialescudero.com@gmail.com",
         labo: "Le Labo est un espace de mon site où on y retrouve différents mini-projets de développement web et web design que je vous invite à découvrir.",
-    }
+    };
 </script>
 
 <template>
-    <nav class="fixed w-full z-10">
+    <nav class="fixed top-0 w-full z-10">
         <div class="p-5 md:p-12 mx-auto flex justify-between items-center">
             <NuxtLink to="/">
                 <img class="ml-1 w-14 md:w-20" src="~/assets/img/icon.png" alt="Logo Martial Escudero"/>

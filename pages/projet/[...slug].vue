@@ -1,15 +1,27 @@
-<script lang="ts" setup>
-    const route = useRoute()
-    const apiUrl = import.meta.env.VITE_API_URL
+<script  setup>
+    const { $markdown } = useNuxtApp();
+    const route = useRoute();
+    const apiUrl = import.meta.env.VITE_API_URL;
 
-    const { data: project, pending } = await useLazyFetch<any>(`${apiUrl}/projects?populate=%2A&filters[Slug][$eq]=${route.params.slug}`)
+    const content = ref("");
+    
+    const { data: project, pending } = await useLazyFetch(`${apiUrl}/projects?populate=%2A&filters[Slug][$eq]=${route.params.slug}`);
 
-    function replaceItems(items: string) {
+    function replaceItems(items) {
         for (let index = 0; index < items.length; index++) {
             items = items.replace(",", " |");
         }
         return items;
+    };
+
+    function toMarkdown() {
+        content.value = $markdown.render(project["_value"].data[0].attributes.Text);
     }
+    
+    onMounted(() => {
+        toMarkdown()
+    });
+
 </script>
 
 <template>
@@ -29,13 +41,16 @@
             <Meta property="twitter:image" :content="project.data[0].attributes.Image.data.attributes.formats.medium.url"/>
         </Head>
 
-        <article class="block h-screen container mx-auto mt-20">
+        <article class="container px-5 mx-auto mt-28 md:mt-32">
             <header class="text-center">
-                <h1 class="text-4xl font-bold">{{ project.data[0].attributes.Title }}</h1>
-                <h2 class="text-2xl text-blue-300">{{ project.data[0].attributes.Type }}</h2>
-                <h3 class="font-light">{{ replaceItems(project.data[0].attributes.Techno) }}</h3>
+                <h1 class="text-2xl md:text-4xl font-bold">{{ project.data[0].attributes.Title }}</h1>
+                <h2 class="text-lg md:text-2xl text-blue-300 mt-2 my-5">{{ project.data[0].attributes.Type }}</h2>
+                <h3 class="text-xs md:text-base font-light mb-10">{{ replaceItems(project.data[0].attributes.Techno) }}</h3>
+                <a v-if="project.data[0].attributes.Type" class="button" :href="project.data[0].attributes.Url">
+                    Découvrir le projet
+                </a>
             </header>
-            <p>{{ project.data[0].attributes.Text }}</p>
+            <div id="markdown" class="mt-20 mb-10" v-html="content"/>
         </article>
     </div>
 </template>

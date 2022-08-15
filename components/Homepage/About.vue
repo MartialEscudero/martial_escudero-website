@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const ageCurrent = getAge("21/07/2000")
+const ageCurrent = getAge("21/07/2000");
 
 function getAge(dtn: string) {
     let today: Date = new Date();

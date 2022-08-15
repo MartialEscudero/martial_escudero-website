@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-    const apiUrl = import.meta.env.VITE_API_URL
+    const apiUrl = import.meta.env.VITE_API_URL;
 
-    const { data: projects, pending } = await useLazyFetch<any>(`${apiUrl}/projects?populate=%2A&sort=id:desc&filters[ShowIt][$eq]=true`)
+    const { data: projects, pending } = await useLazyFetch<any>(`${apiUrl}/projects?populate=%2A&sort=id:desc&filters[ShowIt][$eq]=true`);
 
     function setProjects(projects: Array<any>) {
         if (projects) return projects.slice(0, 4)
