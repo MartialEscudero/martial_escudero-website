@@ -28,11 +28,11 @@
             <div class="w-full lg:w-1/2 bg-white text-[#0e0e0e]">
                 <div class="flex flex-col justify-center items-center h-screen">
                     <div class="flex flex-col font-extrabold gap-y-8 text-4xl">
-                        <NuxtLink @mouseover="isSelect = 'home'" to="/">Home</NuxtLink>
-                        <NuxtLink @mouseover="isSelect = 'about'" to="/cv">À Propos</NuxtLink>
-                        <NuxtLink @mouseover="isSelect = 'portfolio'" to="/portfolio">Portfolio</NuxtLink>
-                        <NuxtLink @mouseover="isSelect = 'labo'" to="/labo">Le Labo</NuxtLink>
-                        <NuxtLink @mouseover="isSelect = 'contact'" to="/contact">Contact</NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'home'" to="/">Home</NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'about'" to="/cv">À Propos</NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'portfolio'" to="/portfolio">Portfolio</NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'labo'" to="/labo">Le Labo</NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'contact'" to="/contact">Contact</NuxtLink>
                     </div>
                 </div>
             </div>
