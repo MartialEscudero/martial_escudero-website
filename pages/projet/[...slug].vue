@@ -1,29 +1,26 @@
-<script  setup>
+<script lang="ts" setup>
     const { $markdown } = useNuxtApp();
     const route = useRoute();
     const apiUrl = import.meta.env.VITE_API_URL;
 
     const content = ref("");
     
-    const { data: project, pending } = await useLazyFetch(`${apiUrl}/projects?populate=%2A&filters[Slug][$eq]=${route.params.slug}`);
+    const { data: project, pending } = await useLazyFetch<any>(`${apiUrl}/projects?populate=%2A&filters[Slug][$eq]=${route.params.slug}`);
 
-    function replaceItems(items) {
+    function replaceItems(items:string) {
         for (let index = 0; index < items.length; index++) {
             items = items.replace(",", " |");
         }
         return items;
     };
-    
 
     function toMarkdown() {
         content.value = $markdown.render(project["_value"].data[0].attributes.Text);
-    }
-
+    };
     
     onMounted(() => {
-        toMarkdown()
+        toMarkdown();
     });
-
 </script>
 
 <template>
