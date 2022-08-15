@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     css: [
         "@/assets/css/style.css",
     ],
+    
+    typescript: {
+        strict: true
+    },
 
     build: {
         postcss: {

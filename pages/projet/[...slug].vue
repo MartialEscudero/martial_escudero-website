@@ -1,12 +1,10 @@
-<script setup>
+<script lang="ts" setup>
     const route = useRoute()
     const apiUrl = import.meta.env.VITE_API_URL
 
-    const { data: project } = await useLazyAsyncData(
-        () => $fetch(apiUrl + "/projects?populate=%2A&filters[Slug][$eq]=" + route.params.slug)
-    )
+    const { data: project, pending } = await useLazyFetch<any>(apiUrl + "/projects?populate=%2A&filters[Slug][$eq]=" + route.params.slug)
 
-    function replaceItems(items) {
+    function replaceItems(items: string) {
         for (let index = 0; index < items.length; index++) {
             items = items.replace(",", " |");
         }
@@ -15,7 +13,7 @@
 </script>
 
 <template>
-    <div>
+    <div v-if="!pending">
         <Head>
             <Title>{{ project.data[0].attributes.Title }}</Title>
             <Meta name="description" :content="'Présentation du projet :' + project.data[0].attributes.Title"/>
