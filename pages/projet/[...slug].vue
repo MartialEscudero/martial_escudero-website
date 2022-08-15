@@ -2,7 +2,7 @@
     const route = useRoute()
     const apiUrl = import.meta.env.VITE_API_URL
 
-    const { data: project, pending } = await useLazyFetch<any>(apiUrl + "/projects?populate=%2A&filters[Slug][$eq]=" + route.params.slug)
+    const { data: project, pending } = await useLazyFetch<any>(`${apiUrl}/projects?populate=%2A&filters[Slug][$eq]=${route.params.slug}`)
 
     function replaceItems(items: string) {
         for (let index = 0; index < items.length; index++) {

@@ -1,28 +1,24 @@
-<script lang="ts">
-export default {
-    data() {
-        return {
-            isOpen: false,
-            isSelect: 'base',
-            text: {
-                home: "Home, ici ça veut dire accueil en anglais. Du coup, c'est la page d'accueil.",
-                about: "Si vous avez des questions sur mon profil ou mon parcours, vous trouverez ici toutes les réponses.",
-                portfolio: "Sur mon Portfolio, vous retrouvez différents projets que j'ai pu réaliser dans le domaine du Développement Web, du Graphisme ou encore de l'Audiovisuel.",
-                contact: "Si vous avez une question, un projet ou autre, vous pouvez compléter ce formulaire de contact (allez le voir il est tout beau) ou contactez-moi à l'adresse suivante : martialescudero.com@gmail.com",
-                labo: "Le Labo est un espace de mon site où on y retrouve différents mini-projets de développement web et web design que je vous invite à découvrir.",
-            }
-        }
+<script lang="ts" setup>
+    let isOpen = ref(false)
+
+    let isSelect = ref("base");
+
+    const text: any = {
+        home: "Home, ici ça veut dire accueil en anglais. Du coup, c'est la page d'accueil.",
+        about: "Si vous avez des questions sur mon profil ou mon parcours, vous trouverez ici toutes les réponses.",
+        portfolio: "Sur mon Portfolio, vous retrouvez différents projets que j'ai pu réaliser dans le domaine du Développement Web, du Graphisme ou encore de l'Audiovisuel.",
+        contact: "Si vous avez une question, un projet ou autre, vous pouvez compléter ce formulaire de contact (allez le voir il est tout beau) ou contactez-moi à l'adresse suivante : martialescudero.com@gmail.com",
+        labo: "Le Labo est un espace de mon site où on y retrouve différents mini-projets de développement web et web design que je vous invite à découvrir.",
     }
-}
 </script>
 
 <template>
     <nav class="fixed w-full z-10">
         <div class="p-5 md:p-12 mx-auto flex justify-between items-center">
             <NuxtLink to="/">
-                <img class="w-14 md:w-20" src="~/assets/img/icon.png" alt="Logo Martial Escudero"/>
+                <img class="ml-1 w-14 md:w-20" src="~/assets/img/icon.png" alt="Logo Martial Escudero"/>
             </NuxtLink>
-            <button class="z-10 scale-[1.3] w-10 h-10 relative focus:outline-none" @click="isOpen = !isOpen">
+            <button class="z-10 scale-[1.3] w-10 h-10 relative focus:outline-none" @click="isOpen =! isOpen">
                 <span class="block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out" :class="{ 'text-[#0e0e0e] lg:text-white rotate-45' : isOpen, '-translate-y-1.5' : !isOpen }"/>
                 <span class="block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out" :class="{ 'text-[#0e0e0e] lg:text-white opacity-0' : isOpen }"/>
                 <span class="block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out" :class="{ 'text-[#0e0e0e] lg:text-white -rotate-45' : isOpen,'translate-y-1.5' : !isOpen }"/>
