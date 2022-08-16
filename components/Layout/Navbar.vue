@@ -28,11 +28,31 @@
             <div class="w-full lg:w-1/2 bg-white text-[#0e0e0e]">
                 <div class="flex flex-col justify-center items-center h-screen">
                     <div class="flex flex-col font-extrabold gap-y-8 text-4xl">
-                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'home'" to="/">Home</NuxtLink>
-                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'about'" to="/cv">À Propos</NuxtLink>
-                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'portfolio'" to="/portfolio">Portfolio</NuxtLink>
-                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'labo'" to="/labo">Le Labo</NuxtLink>
-                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'contact'" to="/contact">Contact</NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'home'" to="/" class="relative group w-fit">
+                            <span>Home</span>
+                            <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                            <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                        </NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'about'" to="/cv" class="relative group w-fit">
+                            <span>À Propos</span>
+                            <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                            <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                        </NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'portfolio'" to="/portfolio" class="relative group w-fit">
+                            <span>Portfolio</span>
+                            <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                            <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                        </NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'labo'" to="/labo" class="relative group w-fit">
+                            <span>Le Labo</span>
+                            <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                            <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                        </NuxtLink>
+                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'contact'" to="/contact" class="relative group w-fit">
+                            <span>Contact</span>
+                            <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                            <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
