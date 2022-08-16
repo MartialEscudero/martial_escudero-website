@@ -9,9 +9,7 @@ module.exports = {
         `App.{js,ts,vue}`,
         `app.{js,ts,vue}`
     ],
-    theme: {
-        extend: {},
-    },
+    
     plugins: [
         require("tailwindcss-animate"),
         require('tailwind-scrollbar'),
