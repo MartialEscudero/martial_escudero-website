@@ -88,7 +88,7 @@
                     navigateTo("/");
                 }, 5500);
             }, (error) => {
-                console.log('FAILED...', error.text);
+                console.error('FAILED...', error.text);
             })
         }
 </script>
