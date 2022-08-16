@@ -12,9 +12,7 @@
 
     displayScroll();
 
-    export default {
-        components: { ChevronDoubleDownIcon },
-    }
+    export default {components: { ChevronDoubleDownIcon }};
 </script>
 
 <template>
