@@ -17,5 +17,7 @@
 </script>
 
 <template>
-    <p>Le Labo</p>
+    <div class="flex flex-col h-screen justify-center items-center">
+        <p class="text-xs">Bientôt.</p>
+    </div>
 </template>

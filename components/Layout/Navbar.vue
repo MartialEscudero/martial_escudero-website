@@ -44,11 +44,11 @@
                             <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
                             <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
                         </NuxtLink>
-                        <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'labo'" to="/labo" class="relative group w-fit">
+                        <!-- <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'labo'" to="/labo" class="relative group w-fit">
                             <span>Le Labo</span>
                             <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
                             <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
-                        </NuxtLink>
+                        </NuxtLink> -->
                         <NuxtLink @click="isOpen =! isOpen" @mouseover="isSelect = 'contact'" to="/contact" class="relative group w-fit">
                             <span>Contact</span>
                             <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300"/>
