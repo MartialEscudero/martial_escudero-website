@@ -82,6 +82,34 @@
         @apply bg-[#202020] w-full p-3 text-center overflow-hidden;
     }
 
+    .section {
+        @apply flex flex-col gap-8;
+    }
+
+    .section .card {
+        @apply bg-[#202020] p-5;
+    }
+
+    .section .title {
+        @apply text-lg md:text-xl font-bold;
+    }
+
+    .section .date {
+        @apply text-xs italic bg-[#4b4b4b] px-1.5 py-0.5 mt-1;
+    }
+
+    .section .infos {
+        @apply space-y-4;
+    }
+
+    .section .desc {
+        @apply text-sm mt-4;
+    }
+
+    .section .add {
+        @apply text-xs md:text-sm font-bold;
+    }
+
     #markdown h1 {
         @apply text-xl md:text-3xl text-blue-300 mt-20 font-bold;
     }
