@@ -1,13 +1,19 @@
 <script lang="ts" setup>
-    import validator from "validator"
+    import validator from "validator";
+    import emailjs from "emailjs-com";
 
     useHead({
         title: "Me contacter",
     });
 
-    let step = ref(1)
-    let errorMessage = ref('')
-    let mail: any = {}
+    const emailServiceID: any = import.meta.env.VITE_EMAIL_SERVICE_ID
+    const emailTemplateID: any = import.meta.env.VITE_EMAIL_TEMPLATE_ID
+    const emailPublicKey: any = import.meta.env.VITE_EMAIL_PUBLIC_KEY
+
+    let step = ref(1);
+    let time = ref("5");
+    let errorMessage = ref('');
+    let mail: any = {};
 
     function validateForm(testStep: number) {    
         switch (testStep) {
@@ -48,38 +54,79 @@
                 break;
         }
     }
+
+        function sendEmail(e: any) {
+            emailjs.sendForm(emailServiceID, emailTemplateID, e.target, emailPublicKey)
+                .then((result) => {
+                    // console.log('SUCCESS!', result.text);
+                    step.value++;
+
+                    setTimeout(() => {
+                        time.value = "4";
+                    }, 1000);
+
+                    setTimeout(() => {
+                        time.value = "3";
+                    }, 2000);
+
+                    setTimeout(() => {
+                        time.value = "2";
+                    }, 3000);
+
+                    setTimeout(() => {
+                        time.value = "1";
+                    }, 4000);
+
+                    setTimeout(() => {
+                        time.value = "ZÉ PARTI 🚀 !";
+                    }, 5000);
+
+                    setTimeout(() => {
+                        navigateTo("/");
+                    }, 5500);
+                }, (error) => {
+                    console.log('FAILED...', error.text);
+                })
+        }
 </script>
 
 <template>
     <div class="relative w-full">
         <div class="h-screen flex flex-col justify-center items-center">
-            <div class="form">
-                <p v-if="step <= 4" class="mb-1.5 text-center text-red-500 text-xs">{{ errorMessage }}&nbsp;</p>
-                <input v-if="step === 1" v-model="mail.username" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="username">
-                <input v-if="step === 2" v-model="mail.email" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email">
-                <input v-if="step === 3" v-model="mail.subject" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject">
-                <textarea v-if="step === 4" v-model="mail.message" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10"/>
-                <div class="mt-10 mb-20 w-full flex justify-center">
-                    <a v-if="step <= 4" @click="validateForm(step)" class="text-xl cursor-pointer hover:text-blue-300">Suivant</a>
-                </div>
-                
-                <div v-if="step === 5">
-                    <p class="text-center text-3xl lg:text-5xl">Récapitulatif</p>
-                    <div class="resume">
-                        <p class="col-span-2 lg:col-span-1">{{ mail.username }}</p>
-                        <p class="col-span-2 lg:col-span-1">{{ mail.email }}</p>
-                        <p class="col-span-2">{{ mail.subject }}</p>
-                        <p class="col-span-2 text-left">{{ mail.message }}</p>
+            <div v-if="step <= 5">
+                <form ref="form" @submit.prevent="sendEmail($event)">
+                    <p v-if="step <= 4" class="mb-1.5 text-center text-red-500 text-xs">{{ errorMessage }}&nbsp;</p>
+                    <input v-show="step === 1" v-model="mail.username" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="username">
+                    <input v-show="step === 2" v-model="mail.email" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email">
+                    <input v-show="step === 3" v-model="mail.subject" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject">
+                    <textarea v-show="step === 4" v-model="mail.message" @keypress.enter="step++" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10"/>
+                    <div v-if="step <= 4" class="mt-10 mb-20 w-full flex justify-center">
+                        <a @click="validateForm(step)" class="text-xl cursor-pointer hover:text-blue-300">Suivant</a>
                     </div>
-                    <div class="mb-20 w-full flex justify-between">
-                        <a @click="step = 1, mail = {}" class="text-xl cursor-pointer hover:text-blue-300">Annuler</a>
-                        <a @click="step++" class="text-xl cursor-pointer hover:text-blue-300">Envoyer</a>
+                    
+                    <div v-if="step === 5">
+                        <p class="text-center text-3xl lg:text-5xl">Récapitulatif</p>
+                        <div class="resume">
+                            <p class="col-span-2 lg:col-span-1">{{ mail.username }}</p>
+                            <p class="col-span-2 lg:col-span-1">{{ mail.email }}</p>
+                            <p class="col-span-2">{{ mail.subject }}</p>
+                            <p class="col-span-2 text-left">{{ mail.message }}</p>
+                        </div>
+                        <div class="mb-20 w-full flex justify-between">
+                            <a @click="step = 1, mail = {}" class="text-xl cursor-pointer hover:text-blue-300">Annuler</a>
+                            <input class="text-xl cursor-pointer hover:text-blue-300" type="submit" value="Envoyer"/>
+                        </div>
                     </div>
-                </div>
+                </form>
+                <p class="text-gray-500 text-xs md:text-sm w-full text-center">
+                    ou via <a class="text-gray-500 font-bold hypertext" href="mailto:martial.escudero@gmail.com">martial.escudero@gmail.com</a>
+                </p>
             </div>
-            <p class="text-gray-500 text-xs md:text-sm w-full text-center">
-                ou via <a class="text-gray-500 font-bold hypertext" href="mailto:martial.escudero@gmail.com">martial.escudero@gmail.com</a>
-            </p>
+            <div v-if="step === 6" class="px-14 text-center text-lg lg:text-4xl space-y-5">
+                <p class="text-5xl lg:text-7xl">🎉🎉🎉</p>
+                <p>Mail envoyé avec <span class="font-bold text-blue-300">succès</span> !</p>
+                <p>Vous allez être redirigé dans <span class="font-bold text-blue-300">{{ time }}</span></p>
+            </div>
         </div>
     </div>   
 </template>
