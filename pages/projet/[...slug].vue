@@ -45,13 +45,13 @@
                 <h1 class="text-2xl md:text-4xl font-bold">{{ project.data[0].attributes.Title }}</h1>
                 <h2 class="text-lg md:text-2xl text-blue-300 mt-2 my-5">{{ project.data[0].attributes.Type }}</h2>
                 <h3 class="text-xs md:text-base font-light mb-10">{{ replaceItems(project.data[0].attributes.Techno) }}</h3>
-                <a v-if="project.data[0].attributes.Type" class="button" :href="project.data[0].attributes.Url">
+                <a v-if="project.data[0].attributes.Url" class="button" :href="project.data[0].attributes.Url">
                     Découvrir le projet
                 </a>
             </header>
             <div v-if="content" id="markdown" class="mt-20 mb-10" v-html="content"/>
             <div v-else class="flex justify-center my-20">
-                <div class="border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin"/>
+                <div class="ml-3 border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin"></div>
             </div>
         </article>
     </div>
