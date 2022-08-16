@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ChevronDoubleDownIcon } from "@heroicons/vue/outline"
+import { ChevronDoubleDownIcon } from "@heroicons/vue/outline";
 
 textRotate([
     "Web Developer.",
