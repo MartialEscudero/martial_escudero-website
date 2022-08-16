@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <div class="relative h-screen flex flex-col justify-center items-center z-0">
+    <div id="topHomePage" class="relative h-screen flex flex-col justify-center items-center z-0">
         <div>
             <h1>
                 <span class="block font-bold text-4xl md:text-6xl">Hello,</span>
@@ -25,7 +25,7 @@ export default {
             <p class="txt-rotate text-sm md:text-lg"></p>
         </div>
         <div class="absolute bottom-5">
-            <ChevronDoubleDownIcon class="animate-bounce h-10 w-10 cursor-pointer opacity-50"/>
+            <ChevronDoubleDownIcon v-scroll-to="{el: '#about', offset: -100, duration: 800}" class="animate-bounce h-10 w-10 cursor-pointer opacity-50"/>
         </div>
     </div>
 </template>

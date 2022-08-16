@@ -19,7 +19,7 @@ function getAge(dtn: string) {
 </script>
 
 <template>
-    <div class="container px-5 mx-auto pt-10">
+    <div id="about" class="container px-5 mx-auto pt-10">
         <h2 class="text-5xl text-center sm:text-left">À Propos</h2>
         <div class="grid grid-cols-1 xl:grid-cols-2 my-20 xl:my-32">
             <div class="space-y-16">

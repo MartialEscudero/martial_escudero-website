@@ -19,6 +19,7 @@
         "markdown-it": "^13.0.1",
         "postcss": "^8.4.16",
         "tailwindcss": "^3.1.8",
-        "validator": "^13.7.0"
+        "validator": "^13.7.0",
+        "vue-scrollto": "^2.20.0"
     }
 }

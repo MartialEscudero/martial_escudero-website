@@ -15,7 +15,8 @@
 <template>
     <nav class="fixed top-0 w-full z-10">
         <div class="p-5 md:p-12 mx-auto flex justify-between items-center">
-            <NuxtLink to="/">
+            <img v-if="$route.fullPath === '/'" v-scroll-to="{el: '#topHomePage', duration: 800}" class="ml-1 w-14 md:w-20 cursor-pointer" src="~/assets/img/icon.png" alt="Logo Martial Escudero"/>
+            <NuxtLink v-else to="/">
                 <img class="ml-1 w-14 md:w-20" src="~/assets/img/icon.png" alt="Logo Martial Escudero"/>
             </NuxtLink>
             <button class="z-10 scale-[1.3] w-10 h-10 relative focus:outline-none" @click="isOpen =! isOpen">
