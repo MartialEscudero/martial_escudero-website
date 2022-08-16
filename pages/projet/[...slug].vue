@@ -27,16 +27,16 @@
     <div v-if="!pending">
         <Head>
             <Title>{{ project.data[0].attributes.Title }}</Title>
-            <Meta name="description" :content="'Présentation du projet :' + project.data[0].attributes.Title"/>
+            <Meta name="description" :content="'Présentation du projet : ' + project.data[0].attributes.Title"/>
 
             <Meta property="og:url" :content="'https://www.martialescudero.com' + $route.fullPath"/>
             <Meta property="og:title" :content="project.data[0].attributes.Title"/>
-            <Meta property="og:description" :content="'Présentation du projet :' + project.data[0].attributes.Title"/>
+            <Meta property="og:description" :content="'Présentation du projet : ' + project.data[0].attributes.Title"/>
             <Meta property="og:image" :content="project.data[0].attributes.Image.data.attributes.formats.medium.url"/>
             
             <Meta property="twitter:url" :content="'https://www.martialescudero.com' + $route.fullPath"/>
             <Meta property="twitter:title" :content="project.data[0].attributes.Title"/>
-            <Meta property="twitter:description" :content="'Présentation du projet :' + project.data[0].attributes.Title"/>
+            <Meta property="twitter:description" :content="'Présentation du projet : ' + project.data[0].attributes.Title"/>
             <Meta property="twitter:image" :content="project.data[0].attributes.Image.data.attributes.formats.medium.url"/>
         </Head>
 
