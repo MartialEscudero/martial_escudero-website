@@ -51,7 +51,7 @@
             </header>
             <div v-if="content" id="markdown" class="mt-20 mb-10" v-html="content"/>
             <div v-else class="flex justify-center my-20">
-                <div class="ml-3 border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin"></div>
+                <div class="border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin"/>
             </div>
         </article>
     </div>

@@ -12,6 +12,7 @@
 
     let step = ref(1);
     let time = ref("5");
+    let isLoading = ref(false);
     let errorMessage = ref('');
     let mail: any = {};
 
@@ -55,38 +56,40 @@
         }
     }
 
-        function sendEmail(e: any) {
-            emailjs.sendForm(emailServiceID, emailTemplateID, e.target, emailPublicKey)
-                .then((result) => {
-                    // console.log('SUCCESS!', result.text);
-                    step.value++;
+    function sendEmail(e: any) {
+        isLoading.value = true;
+        emailjs.sendForm(emailServiceID, emailTemplateID, e.target, emailPublicKey)
+            .then((result) => {
+                // console.log('SUCCESS!', result.text);
+                step.value++;
+                isLoading.value = false;
 
-                    setTimeout(() => {
-                        time.value = "4";
-                    }, 1000);
+                setTimeout(() => {
+                    time.value = "4";
+                }, 1000);
 
-                    setTimeout(() => {
-                        time.value = "3";
-                    }, 2000);
+                setTimeout(() => {
+                    time.value = "3";
+                }, 2000);
 
-                    setTimeout(() => {
-                        time.value = "2";
-                    }, 3000);
+                setTimeout(() => {
+                    time.value = "2";
+                }, 3000);
 
-                    setTimeout(() => {
-                        time.value = "1";
-                    }, 4000);
+                setTimeout(() => {
+                    time.value = "1";
+                }, 4000);
 
-                    setTimeout(() => {
-                        time.value = "ZÉ PARTI 🚀 !";
-                    }, 5000);
+                setTimeout(() => {
+                    time.value = "ZÉ PARTI 🚀 !";
+                }, 5000);
 
-                    setTimeout(() => {
-                        navigateTo("/");
-                    }, 5500);
-                }, (error) => {
-                    console.log('FAILED...', error.text);
-                })
+                setTimeout(() => {
+                    navigateTo("/");
+                }, 5500);
+            }, (error) => {
+                console.log('FAILED...', error.text);
+            })
         }
 </script>
 
@@ -112,9 +115,12 @@
                             <p class="col-span-2">{{ mail.subject }}</p>
                             <p class="col-span-2 text-left">{{ mail.message }}</p>
                         </div>
-                        <div class="mb-20 w-full flex justify-between">
+                        <div v-if="isLoading === false" class="mb-20 w-full flex justify-between">
                             <a @click="step = 1, mail = {}" class="text-xl cursor-pointer hover:text-blue-300">Annuler</a>
                             <input class="text-xl cursor-pointer hover:text-blue-300" type="submit" value="Envoyer"/>
+                        </div>
+                        <div v-if="isLoading === true" class="mb-20 w-full flex justify-center">
+                            <div class="border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin"/>
                         </div>
                     </div>
                 </form>
