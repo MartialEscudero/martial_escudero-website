@@ -24,8 +24,8 @@ export default defineNuxtConfig({
             "@heroicons/vue"
         ],
     },
-    
-    buildModules: [
-        '@pinia/nuxt',
+
+    modules: [
+        '@vueuse/nuxt',
     ],
 })

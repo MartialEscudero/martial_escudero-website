@@ -18,6 +18,16 @@
         @apply font-bold text-[#0e0e0e] bg-blue-300 border border-transparent rounded-3xl py-2 px-5 hover:text-blue-300 hover:bg-[#202020] hover:border-blue-300 transition ease-in-out duration-200;
     }
 
+    .hiddenScroll {
+        opacity: 0;
+        transition: height 0ms 400ms, opacity 400ms 0ms;
+    }
+
+    .activeScroll {
+        opacity: 1;
+        transition: height 0ms 0ms, opacity 600ms 0ms;
+    }
+
     form input[type=text] {
         @apply bg-transparent rounded-full placeholder:text-gray-500 focus:outline-none;
     }
