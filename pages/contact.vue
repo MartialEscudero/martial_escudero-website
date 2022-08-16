@@ -6,9 +6,9 @@
         title: "Me contacter",
     });
 
-    const emailServiceID: any = import.meta.env.VITE_EMAIL_SERVICE_ID
-    const emailTemplateID: any = import.meta.env.VITE_EMAIL_TEMPLATE_ID
-    const emailPublicKey: any = import.meta.env.VITE_EMAIL_PUBLIC_KEY
+    const emailServiceID: any = import.meta.env.VITE_EMAIL_SERVICE_ID;
+    const emailTemplateID: any = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+    const emailPublicKey: any = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
     let step = ref(1);
     let time = ref("5");
