@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Le Labo | HexaClock</title>
+        <link rel="icon" href="/favicon.ico" />
+    </head>
+    <body id="background">
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+            * {
+                font-family: robo;
+                margin: 0;
+                padding: 0;
+            }
+
+            html,
+            body {
+                height: 100%;
+            }
+
+            #container {
+                height: 100%;
+                position: relative;
+                text-align: center;
+                background-color: red;
+            }
+
+            #horloge {
+                font-family: "Manrope", sans-serif;
+                color: white;
+                font-size: 8em;
+                letter-spacing: 30px;
+                margin-bottom: 3%;
+                position: relative;
+                top: 30%;
+                text-align: center;
+            }
+
+            #color {
+                font-family: "Manrope", sans-serif;
+                color: white;
+                font-size: 4em;
+                letter-spacing: 5px;
+                position: relative;
+                top: 30%;
+                text-align: center;
+            }
+
+            /**************** Mobile ****************/
+
+            @media only screen and (min-width: 300px) and (max-width: 450px) {
+                #horloge {
+                    font-size: 4.5em;
+                    letter-spacing: 7px;
+                }
+
+                #color {
+                    font-size: 3em;
+                    letter-spacing: 5px;
+                }
+            }
+        </style>
+
+        <div id="container">
+            <div id="horloge"></div>
+            <div id="color"></div>
+        </div>
+
+        <script>
+            function displayTime() {
+                var d = new Date();
+                var h = d.getHours();
+                var m = d.getMinutes();
+                var s = d.getSeconds();
+
+                if (h <= 9) h = "0" + h;
+                if (m <= 9) m = "0" + m;
+                if (s <= 9) s = "0" + s;
+
+                var color = "#" + h + m + s;
+
+                var heure = h + ":" + m + ":" + s;
+
+                document.getElementById("container").style.backgroundColor =
+                    color;
+
+                document.getElementById("horloge").innerHTML = heure;
+
+                document.getElementById("color").innerHTML = color;
+
+                setTimeout(displayTime, 1000);
+            }
+
+            displayTime();
+        </script>
+    </body>
+</html>

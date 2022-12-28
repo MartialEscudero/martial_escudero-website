@@ -1,0 +1,10 @@
+{   
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "target": "ESNext",
+        "types": ["vite/client"]
+    },
+    // https://nuxt.com/docs/concepts/typescript
+    "extends": "./.nuxt/tsconfig.json"
+}
