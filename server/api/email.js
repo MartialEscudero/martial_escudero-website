@@ -5,7 +5,7 @@ export default defineEventHandler(async  (event) => {
 
     if (req.method !== "POST") {
         res.statusCode = 405
-        res.end()
+        return res.end()
     }
 
     const body = await readBody(event)
@@ -32,5 +32,5 @@ export default defineEventHandler(async  (event) => {
 
     await transporter.sendMail(infos)
 
-    res.end("Email Sent !")
+    return res.end("Email Sent !")
 })
