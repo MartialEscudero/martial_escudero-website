@@ -15,11 +15,12 @@
         "tailwindcss-animate": "^1.0.5"
     },
     "dependencies": {
-        "@emailjs/browser": "^3.6.2",
         "@heroicons/vue": "^2.0.13",
         "@vueuse/core": "^9.1.0",
         "@vueuse/nuxt": "^9.1.0",
         "markdown-it": "^13.0.1",
+        "nodemailer": "^6.8.0",
+        "notyf": "^3.10.0",
         "typed.js": "^2.0.12",
         "validator": "^13.7.0",
         "vue-scrollto": "^2.20.0"
