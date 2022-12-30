@@ -1,6 +1,7 @@
 <script setup>
 import validator from "validator"
-import emailjs from "@emailjs/browser"
+import { Notyf } from "notyf"
+import "notyf/notyf.min.css"
 
 useHead({
     title: "Me contacter",
@@ -17,26 +18,21 @@ useHead({
     ]
 })
 
-const emailServiceID = import.meta.env.VITE_EMAIL_SERVICE_ID
-const emailTemplateID = import.meta.env.VITE_EMAIL_TEMPLATE_ID
-const emailPublicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY
-
-let formHtml = ref(null)
 let step = ref(1)
-let time = ref("5")
+let time = ref(5)
 let isLoading = ref(false)
 let errorMessage = ref("")
 let mail = {
-    username: "",
+    name: "",
     email: "",
     subject: "",
-    message: ""
+    text: ""
 }
 
 function validateForm(testStep) {
     switch (testStep) {
         case 1:
-            if (mail.username === undefined || !validator.isLength(mail.username,{min: 4, max: 30})) {
+            if (mail.name === undefined || !validator.isLength(mail.name,{min: 4, max: 30})) {
                 errorMessage.value = "Une erreur apparait dans l'écriture de votre Nom."
             } else {
                 step.value++
@@ -45,7 +41,7 @@ function validateForm(testStep) {
             break
 
         case 2:
-            if (mail.email === undefined || !validator.isEmail(mail.email)) {
+            if (mail.from === undefined || !validator.isEmail(mail.from)) {
                 errorMessage.value = "Une erreur apparait dans l'écriture de votre E-mail."
             } else {
                 step.value++
@@ -54,7 +50,7 @@ function validateForm(testStep) {
             break
 
         case 3:
-            if (mail.subject === undefined || !validator.isLength(mail.username,{min: 4, max: 50})) {
+            if (mail.subject === undefined || !validator.isLength(mail.subject,{min: 4, max: 50})) {
                 errorMessage.value = "Une erreur apparait dans l'écriture du Sujet."
             } else {
                 step.value++
@@ -63,7 +59,7 @@ function validateForm(testStep) {
             break
 
         case 4:
-            if (mail.message === undefined || !validator.isLength(mail.message,{min: 10, max: 1500})) {
+            if (mail.text === undefined || !validator.isLength(mail.text,{min: 10, max: 1500})) {
                 errorMessage.value = "Vore message est vide ou trop court."
             } else {
                 step.value++
@@ -73,40 +69,44 @@ function validateForm(testStep) {
     }
 }
 
-function sendEmail() {
+async function sendEmail() {
+    let timeCount = 5
     isLoading.value = true
+    mail.text = validator.escape(mail.text)
 
-    emailjs.sendForm(emailServiceID, emailTemplateID, formHtml.value, emailPublicKey)
-        .then(() => {
-            step.value++
-            isLoading.value = false
+    const { error } = await useFetch("/api/email", {
+        headers: { "Content-type": "application/json" },
+        method: "POST",
+        body: mail
+    })
 
-            setTimeout(() => {
-                time.value = "4"
-            }, 1000)
+    if (!error.value) {
+        step.value++
+        isLoading.value = false
 
-            setTimeout(() => {
-                time.value = "3"
-            }, 2000)
+        setInterval(() => {
+            timeCount--
+            time.value--
 
-            setTimeout(() => {
-                time.value = "2"
-            }, 3000)
-
-            setTimeout(() => {
-                time.value = "1"
-            }, 4000)
-
-            setTimeout(() => {
+            if (timeCount === 0) {
                 time.value = "... 🚀"
-            }, 5000)
-
-            setTimeout(() => {
-                navigateTo("/")
-            }, 5500)
-        }, (err) => {
-            console.error("FAILED...", err.text)
+                setTimeout(() => {
+                    navigateTo("/")
+                }, 500)
+            }
+        }, 1000)
+    } else {
+        const notyf = new Notyf({
+            duration: 5000,
+            position: {
+                x: "right",
+                y: "bottom"
+            }
         })
+
+        notyf.error("Une erreur est survenue, veuillez réessayer")
+        navigateTo("/")
+    }
 }
 </script>
 
@@ -114,16 +114,16 @@ function sendEmail() {
     <div class="relative w-full">
         <div class="h-screen flex flex-col justify-center items-center">
             <div v-if="step <= 5">
-                <form ref="formHtml" @submit.prevent="sendEmail($event)">
+                <form @submit.prevent="sendEmail()">
                     <p v-if="step <= 4" class="mb-1.5 text-center text-red-500 text-xs">{{ errorMessage }}&nbsp;</p>
 
-                    <input v-show="step === 1" v-model="mail.username" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="username">
+                    <input v-show="step === 1" v-model="mail.name" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="name">
 
-                    <input v-show="step === 2" v-model="mail.email" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email">
+                    <input v-show="step === 2" v-model="mail.from" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email">
 
-                    <input v-show="step === 3" v-model="mail.subject" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject">
+                    <input v-show="step === 3" v-model="mail.subject" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject">
 
-                    <textarea v-show="step === 4" v-model="mail.message" @keypress="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10"/>
+                    <textarea v-show="step === 4" v-model="mail.text" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10"/>
 
                     <div v-if="step <= 4" class="mt-10 mb-20 w-full flex justify-center">
                         <a @click="validateForm(step)" class="text-xl cursor-pointer hover:text-blue-300">Suivant</a>
@@ -132,10 +132,10 @@ function sendEmail() {
                     <div v-if="step === 5">
                         <p class="text-center text-3xl lg:text-5xl">Récapitulatif</p>
                         <div class="resume">
-                            <p class="col-span-2 lg:col-span-1">{{ mail.username }}</p>
-                            <p class="col-span-2 lg:col-span-1">{{ mail.email }}</p>
+                            <p class="col-span-2 lg:col-span-1">{{ mail.name }}</p>
+                            <p class="col-span-2 lg:col-span-1">{{ mail.from }}</p>
                             <p class="col-span-2">{{ mail.subject }}</p>
-                            <p class="col-span-2 text-left">{{ mail.message }}</p>
+                            <p class="col-span-2 text-left">{{ mail.text }}</p>
                         </div>
                         <div v-if="isLoading === false" class="mb-20 w-full flex justify-between">
                             <a @click="step = 1" class="text-xl cursor-pointer hover:text-blue-300">Annuler</a>
