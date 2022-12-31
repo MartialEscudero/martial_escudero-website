@@ -128,7 +128,11 @@
     }
 
     form .resume p {
-        @apply bg-[#202020] w-full p-3 text-center overflow-hidden;
+        @apply bg-[#202020] w-full p-3 text-center;
+    }
+
+    form .resume div {
+        @apply bg-[#202020] w-full p-3 text-left;
     }
 
     .section {

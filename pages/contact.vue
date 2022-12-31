@@ -26,7 +26,11 @@ let mail = {
     name: "",
     email: "",
     subject: "",
-    text: ""
+    textEdit: ""
+}
+
+function returnLine(text) {
+    return validator.escape(text).replace(/\r\n|\r|\n/g, "<br>")
 }
 
 function validateForm(testStep) {
@@ -59,7 +63,7 @@ function validateForm(testStep) {
             break
 
         case 4:
-            if (mail.text === undefined || !validator.isLength(mail.text,{min: 10, max: 1500})) {
+            if (mail.textEdit === undefined || !validator.isLength(mail.textEdit,{min: 10, max: 1500})) {
                 errorMessage.value = "Vore message est vide ou trop court."
             } else {
                 step.value++
@@ -72,7 +76,7 @@ function validateForm(testStep) {
 async function sendEmail() {
     let timeCount = 5
     isLoading.value = true
-    mail.text = validator.escape(mail.text)
+    mail.text = returnLine(mail.textEdit)
 
     const { error } = await useFetch("/api/email", {
         headers: { "Content-type": "application/json" },
@@ -89,7 +93,7 @@ async function sendEmail() {
             time.value--
 
             if (timeCount === 0) {
-                time.value = "... 🚀"
+                time.value = "… 🚀"
                 setTimeout(() => {
                     navigateTo("/")
                 }, 500)
@@ -123,7 +127,7 @@ async function sendEmail() {
 
                     <input v-show="step === 3" v-model="mail.subject" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject">
 
-                    <textarea v-show="step === 4" v-model="mail.text" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10"/>
+                    <textarea v-show="step === 4" v-model="mail.textEdit" @focus="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10"/>
 
                     <div v-if="step <= 4" class="mt-10 mb-20 w-full flex justify-center">
                         <a @click="validateForm(step)" class="text-xl cursor-pointer hover:text-blue-300">Suivant</a>
@@ -135,13 +139,13 @@ async function sendEmail() {
                             <p class="col-span-2 lg:col-span-1">{{ mail.name }}</p>
                             <p class="col-span-2 lg:col-span-1">{{ mail.from }}</p>
                             <p class="col-span-2">{{ mail.subject }}</p>
-                            <p class="col-span-2 text-left">{{ mail.text }}</p>
+                            <div v-html="returnLine(mail.textEdit)" class="col-span-2 text-left max-h-96 overflow-y-scroll" />
                         </div>
-                        <div v-if="isLoading === false" class="mb-20 w-full flex justify-between">
+                        <div v-if="!isLoading" class="mb-20 w-full flex justify-between">
                             <a @click="step = 1" class="text-xl cursor-pointer hover:text-blue-300">Annuler</a>
                             <input class="text-xl cursor-pointer hover:text-blue-300" type="submit" value="Envoyer"/>
                         </div>
-                        <div v-if="isLoading === true" class="mb-20 w-full flex justify-center">
+                        <div v-else class="mb-20 w-full flex justify-center">
                             <div class="border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin"/>
                         </div>
                     </div>
