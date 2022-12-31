@@ -26,6 +26,8 @@ export default defineEventHandler(async  (event) => {
         html: `
             <p>Message de ${name} via ${from}</p>
             <br>
+            <div style="width: 100%; height: 1px; background: gray"/>
+            <br>
             <p>${text}</p>
         `
     }
