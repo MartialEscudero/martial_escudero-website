@@ -1,23 +1,3 @@
-<script setup>
-const ageCurrent = getAge("21/07/2000")
-
-function getAge(dtn) {
-    let today = new Date()
-    let year = dtn.substr(6, 4)
-    let month = dtn.substr(3, 2)
-    let day = dtn.substr(0, 2)
-    let birthday = new Date(year + "-" + month + "-" + day)
-    let age = today.getFullYear() - birthday.getFullYear()
-    let m = today.getMonth() - birthday.getMonth()
-
-    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
-        age = age - 1
-    }
-
-    return Math.abs(age)
-}
-</script>
-
 <template>
     <div id="about" class="container px-5 mx-auto pt-10">
         <h2 class="text-5xl text-center sm:text-left">À Propos</h2>
@@ -25,7 +5,7 @@ function getAge(dtn) {
             <div class="space-y-16">
                 <div>
                     <h3 class="text-3xl font-bold">Martial Escudero</h3>
-                    <p class="text-2xl">{{ ageCurrent }} ans</p>
+                    <p class="text-2xl">{{ useGetAge() }} ans</p>
                 </div>
                 <div>
                     <NuxtLink class="button" to="/cv">Voir mon CV</NuxtLink>
