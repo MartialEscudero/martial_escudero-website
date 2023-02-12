@@ -2,16 +2,18 @@
     "private": true,
     "scripts": {
         "build": "nuxt build",
-        "dev": "nuxt dev",
-        "generate": "nuxt generate",
-        "preview": "nuxt preview"
+        "dev": "yarn test && nuxt dev",
+        "generate": "yarn test && nuxt generate",
+        "preview": "yarn test && nuxt preview",
+        "test": "vitest --run"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",
-        "nuxt": "3.0.0",
+        "nuxt": "^3.2.0",
         "postcss": "^8.4.20",
         "tailwindcss": "^3.2.4",
-        "tailwindcss-animate": "^1.0.5"
+        "tailwindcss-animate": "^1.0.5",
+        "vitest": "^0.28.4"
     },
     "dependencies": {
         "@heroicons/vue": "^2.0.13",

@@ -17,7 +17,8 @@ useHead({
 })
 
 const apiUrl = import.meta.env.VITE_API_URL
-
+const res = await fetch(`${apiUrl}/links?filters[id][$eq]=3`)
+console.log(res);
 const { data: cv } = await useAsyncData(() => $fetch(`${apiUrl}/links?filters[id][$eq]=3`))
 </script>
 
