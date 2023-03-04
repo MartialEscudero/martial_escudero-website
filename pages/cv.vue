@@ -16,9 +16,7 @@ useHead({
     ]
 })
 
-const apiUrl = import.meta.env.VITE_API_URL
-
-const { data: cv } = await useAsyncData(() => $fetch(`${apiUrl}/links?filters[id][$eq]=3`))
+const cvUrl = import.meta.env.VITE_CV_URL
 </script>
 
 <template>
@@ -39,7 +37,7 @@ const { data: cv } = await useAsyncData(() => $fetch(`${apiUrl}/links?filters[id
                 <p>Passionné et autodidacte depuis toujours, je saurais m'investir et vous accompagnez dans vos projets.
                 </p>
                 <div class="flex justify-center mt-2">
-                    <a class="button flex items-center w-fit" :href="cv.data[0].attributes.Url" target="_blank">
+                    <a class="button flex items-center w-fit" :href="cvUrl" target="_blank">
                         <DocumentArrowDownIcon class="w-6 h-6 mr-1"/>
                         <span>Télécharger mon CV</span>
                     </a>
@@ -53,12 +51,12 @@ const { data: cv } = await useAsyncData(() => $fetch(`${apiUrl}/links?filters[id
                     <p class="title">NEXTON - Développeur Front-End <span class="font-normal">| CDI</span></p>
                     <span class="date">Juin 2021 à maintenant - SAINT-AUGUSTIN</span>
                     <div class="infos">
-                        <p class="desc">Développeur Front-End chez NEXTON dans la pôle Agence.</p>
+                        <p class="desc">Développeur Front-End chez NEXTON dans le pôle Agence.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <p class="title">NEXTON - Développeur Front-End Junior <span class="font-normal">| Stage</span></p>
+                    <p class="title">NEXTON - Développeur Front-End <span class="font-normal">| Stage</span></p>
                     <span class="date">3 mois - SAINT-AUGUSTIN</span>
                     <div class="infos">
                         <p class="desc">Stage de 3 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
@@ -67,7 +65,7 @@ const { data: cv } = await useAsyncData(() => $fetch(`${apiUrl}/links?filters[id
                 </div>
 
                 <div class="card">
-                    <p class="title">HortusBox - Développeur Front-End Junior <span class="font-normal">| Stage</span></p>
+                    <p class="title">HortusBox - Développeur Front-End <span class="font-normal">| Stage</span></p>
                     <span class="date">2 mois - BORDEAUX</span>
                     <div class="infos">
                         <p class="desc">Stage de 2 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
@@ -101,6 +99,7 @@ const { data: cv } = await useAsyncData(() => $fetch(`${apiUrl}/links?filters[id
                     <span class="date">SEPTEMBRE 2021 / JUILLET 2022 - LIMOGES</span>
                     <div class="infos">
                         <p class="desc">Licence Professionnelle – Métiers de l'informatique : Conduite de Projet - Développement Web.</p>
+                        <p class="add">Mention Bien.</p>
                     </div>
                 </div>
 

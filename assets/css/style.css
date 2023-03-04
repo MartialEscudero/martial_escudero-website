@@ -163,36 +163,64 @@
         @apply text-xs md:text-sm font-bold;
     }
 
-    #markdown h1 {
-        @apply text-xl md:text-3xl text-blue-300 mt-20 font-bold;
+    #project-markdown {
+        @apply mt-16 md:mt-28;
     }
 
-    #markdown h2 {
-        @apply text-lg md:text-2xl font-bold;
+    #project-markdown #hero {
+        @apply text-center space-y-4;
     }
 
-    #markdown p {
-        @apply mt-12;
+    #project-markdown #hero h1 {
+        @apply text-xl md:text-4xl font-bold;
     }
 
-    #markdown ul {
+    #project-markdown #hero .type {
+        @apply text-lg md:text-2xl text-blue-300;
+    }
+
+    #project-markdown #hero .techno {
+        @apply font-light text-sm;
+    }
+
+    #project-markdown #hero a {
+        @apply button;
+    }
+
+    #project-markdown #content {
+        @apply my-10 md:my-12 container mx-auto px-5;
+    }
+
+    #project-markdown #content {
+        @apply space-y-10;
+    }
+
+    #project-markdown #content h2 {
+        @apply text-2xl md:text-4xl font-bold text-blue-300 pt-10;
+    }
+
+    #project-markdown #content ul {
         @apply ml-5 md:ml-10;
     }
 
-    #markdown ul li p {
-        @apply mt-5;
+    #project-markdown #content ul {
+        @apply space-y-4 ;
     }
 
-    #markdown li p:before {
+    #project-markdown #content ul li:first-child {
+        @apply -mt-5;
+    }
+
+    #project-markdown #content ul li:before {
         @apply mr-0.5;
         content: "• ";
     }
 
-    #markdown a {
+    #project-markdown #content a {
         @apply hypertext;
     }
 
-    #markdown img {
-        @apply w-full md:w-1/2 mx-auto mt-10;
+    #project-markdown #content img {
+        @apply w-full md:w-1/2 mx-auto mb-10;
     }
 }

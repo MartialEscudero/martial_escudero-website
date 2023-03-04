@@ -11,12 +11,9 @@ export default defineNuxtConfig({
             autoprefixer: {}
         }
     },
-    build: {
-        transpile: [
-            "@heroicons/vue"
-        ]
-    },
     modules: [
-        "@vueuse/nuxt"
+        "@nuxt/devtools",
+        "@vueuse/nuxt",
+        "@nuxt/content"
     ]
 })
