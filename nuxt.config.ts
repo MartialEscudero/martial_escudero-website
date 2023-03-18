@@ -14,6 +14,9 @@ export default defineNuxtConfig({
     modules: [
         "@nuxt/devtools",
         "@vueuse/nuxt",
-        "@nuxt/content"
-    ]
+        "@nuxt/content",
+        ["@nuxtjs/eslint-module", { 
+            "lintOnStart": true 
+        }]
+    ],
 })
