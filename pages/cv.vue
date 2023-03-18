@@ -38,7 +38,7 @@ const cvUrl = import.meta.env.VITE_CV_URL
                 </p>
                 <div class="flex justify-center mt-2">
                     <a class="button flex items-center w-fit" :href="cvUrl" target="_blank">
-                        <DocumentArrowDownIcon class="w-6 h-6 mr-1"/>
+                        <DocumentArrowDownIcon class="w-6 h-6 mr-1" />
                         <span>Télécharger mon CV</span>
                     </a>
                 </div>
@@ -59,7 +59,8 @@ const cvUrl = import.meta.env.VITE_CV_URL
                     <p class="title">NEXTON - Développeur Front-End <span class="font-normal">| Stage</span></p>
                     <span class="date">3 mois - SAINT-AUGUSTIN</span>
                     <div class="infos">
-                        <p class="desc">Stage de 3 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
+                        <p class="desc">
+                            Stage de 3 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
                         </p>
                     </div>
                 </div>
@@ -68,7 +69,8 @@ const cvUrl = import.meta.env.VITE_CV_URL
                     <p class="title">HortusBox - Développeur Front-End <span class="font-normal">| Stage</span></p>
                     <span class="date">2 mois - BORDEAUX</span>
                     <div class="infos">
-                        <p class="desc">Stage de 2 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
+                        <p class="desc">
+                            Stage de 2 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
                         </p>
                     </div>
                 </div>
@@ -77,7 +79,8 @@ const cvUrl = import.meta.env.VITE_CV_URL
                     <p class="title">OTI Ventadour-Egletons-Monédières - Webmaster <span class="font-normal">| CDI</span></p>
                     <span class="date">1 mois - ÉGLETONS</span>
                     <div class="infos">
-                        <p class="desc">Stage de 1 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
+                        <p class="desc">
+                            Stage de 1 mois dans le cadre de mon DEUST Webmaster & Métiers de l’Internet.
                         </p>
                     </div>
                 </div>

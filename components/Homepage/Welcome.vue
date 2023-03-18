@@ -35,7 +35,7 @@ onMounted(() => {
                 <span class="block font-bold text-4xl md:text-6xl">Hello,</span>
                 <span class="block text-lg md:text-5xl my-2 md:my-4">My name is <span class="font-bold text-blue-300">Martial Escudero.</span></span>
             </h1>
-            <p class="text-sm md:text-lg">&nbsp;<span v-text="textBase" class="text-typing -ml-[2px]"/></p>
+            <p class="text-sm md:text-lg">&nbsp;<span class="text-typing -ml-[2px]" v-text="textBase" /></p>
         </div>
         <div id="scrollArrow" class="absolute bottom-5">
             <ChevronDoubleDownIcon v-scroll-to="{ el: '#about', offset: -100, duration: 800 }" class="animate-bounce h-10 w-10 opacity-50" />

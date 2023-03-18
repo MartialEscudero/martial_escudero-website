@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/valid-v-for -->
 <script setup>
 useHead({
     title: "Portfolio",
@@ -21,7 +22,7 @@ const { data: projects } = await useAsyncData(() => queryContent("projet").sort(
     <div class="container mx-auto px-5">
         <h1 class="text-5xl text-center sm:text-left mt-28 md:mt-36">Portfolio</h1>
         <div class="my-16 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-20">
-            <NuxtLink v-for="project in projects" :to="project._path" class="h-[300px] md:h-[250px] lg:h-[350px] w-full hover:scale-[1.05] transition ease-in-out duration-200">
+            <NuxtLink v-for="project in projects" :key="project" :to="project._path" class="h-[300px] md:h-[250px] lg:h-[350px] w-full hover:scale-[1.05] transition ease-in-out duration-200">
                 <div :style="`background-image: url(/content/${project.card})`" class="rounded-t-xl h-5/6 bg-cover bg-center" />
                 <div class="rounded-b-xl bg-[#202020] p-2 lg:p-4">
                     <p class="text-lg lg:text-2xl font-medium">{{ project.title }}</p>

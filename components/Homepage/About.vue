@@ -33,7 +33,7 @@
                     </a>
                     <a href="https://link.martialescudero.com/" rel="noopener" target="_blank">
                         <svg class="w-10 h-10 fill-white hover:fill-blue-300 transition ease-in-out duration-200" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/>
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
                         </svg>
                     </a>
                 </div>

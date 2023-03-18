@@ -120,17 +120,17 @@ async function sendEmail() {
             <div v-if="step <= 5">
                 <form @submit.prevent="sendEmail()">
                     <p v-if="step <= 4" class="mb-1.5 text-center text-red-500 text-xs">{{ errorMessage }}&nbsp;</p>
+                    
+                    <input v-show="step === 1" v-model="mail.name" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="name" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">
 
-                    <input v-show="step === 1" v-model="mail.name" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="name">
+                    <input v-show="step === 2" v-model="mail.from" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">
 
-                    <input v-show="step === 2" v-model="mail.from" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email">
+                    <input v-show="step === 3" v-model="mail.subject" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">
 
-                    <input v-show="step === 3" v-model="mail.subject" @focus="errorMessage = ''" @keypress.enter="validateForm(step)" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject">
-
-                    <textarea v-show="step === 4" v-model="mail.textEdit" @focus="errorMessage = ''" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10"/>
+                    <textarea v-show="step === 4" v-model="mail.textEdit" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10" @focus="errorMessage = ''" />
 
                     <div v-if="step <= 4" class="mt-10 mb-20 w-full flex justify-center">
-                        <a @click="validateForm(step)" class="text-xl cursor-pointer hover:text-blue-300">Suivant</a>
+                        <a class="text-xl cursor-pointer hover:text-blue-300" @click="validateForm(step)">Suivant</a>
                     </div>
 
                     <div v-if="step === 5">
@@ -139,14 +139,14 @@ async function sendEmail() {
                             <p class="col-span-2 lg:col-span-1">{{ mail.name }}</p>
                             <p class="col-span-2 lg:col-span-1">{{ mail.from }}</p>
                             <p class="col-span-2">{{ mail.subject }}</p>
-                            <div v-html="returnLine(mail.textEdit)" class="col-span-2 text-left max-h-96 overflow-y-scroll" />
+                            <div class="col-span-2 text-left max-h-96 overflow-y-scroll" v-html="returnLine(mail.textEdit)" />
                         </div>
                         <div v-if="!isLoading" class="mb-20 w-full flex justify-between">
-                            <a @click="step = 1" class="text-xl cursor-pointer hover:text-blue-300">Annuler</a>
-                            <input class="text-xl cursor-pointer hover:text-blue-300" type="submit" value="Envoyer"/>
+                            <a class="text-xl cursor-pointer hover:text-blue-300" @click="step = 1">Annuler</a>
+                            <input class="text-xl cursor-pointer hover:text-blue-300" type="submit" value="Envoyer" />
                         </div>
                         <div v-else class="mb-20 w-full flex justify-center">
-                            <div class="border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin"/>
+                            <div class="border-t-transparent w-8 h-8 border-4 border-blue-300 border-solid rounded-full animate-spin" />
                         </div>
                     </div>
                 </form>
