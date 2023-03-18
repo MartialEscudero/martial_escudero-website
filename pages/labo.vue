@@ -16,7 +16,7 @@ useHead({
 </script>
 
 <template>
-    <div class="flex flex-col h-screen justify-center items-center text-center md:text-5xl text-2xl">
+    <div class="flex h-screen flex-col items-center justify-center text-center text-2xl md:text-5xl">
         <a rel="noopener" target="_blank" href="https://music.martialescudero.com" class="text-speed-up text-speed-down text">
             Album and vinyl library
         </a>

@@ -21,9 +21,9 @@ const cvUrl = import.meta.env.VITE_CV_URL
 
 <template>
     <div class="container mx-auto px-5">
-        <h1 class="text-5xl text-center sm:text-left mt-28 md:mt-36">CV</h1>
-        <div class="my-16 grid grid-col xl:grid-cols-2 gap-10 xl:gap-y-32">
-            <div class="flex justify-center items-center">
+        <h1 class="mt-28 text-center text-5xl sm:text-left md:mt-36">CV</h1>
+        <div class="grid-col my-16 grid gap-10 xl:grid-cols-2 xl:gap-y-32">
+            <div class="flex items-center justify-center">
                 <p class="text-4xl font-bold">Moi.</p>
             </div>
             <div class="space-y-5">
@@ -36,15 +36,15 @@ const cvUrl = import.meta.env.VITE_CV_URL
                 </p>
                 <p>Passionné et autodidacte depuis toujours, je saurais m'investir et vous accompagnez dans vos projets.
                 </p>
-                <div class="flex justify-center mt-2">
-                    <a class="button flex items-center w-fit" :href="cvUrl" target="_blank">
-                        <DocumentArrowDownIcon class="w-6 h-6 mr-1" />
+                <div class="mt-2 flex justify-center">
+                    <a class="button flex w-fit items-center" :href="cvUrl" target="_blank">
+                        <DocumentArrowDownIcon class="mr-1 h-6 w-6" />
                         <span>Télécharger mon CV</span>
                     </a>
                 </div>
             </div>
-            <div class="flex justify-center items-center">
-                <p class="text-4xl font-bold mt-20 md:mt-0">Expériences.</p>
+            <div class="flex items-center justify-center">
+                <p class="mt-20 text-4xl font-bold md:mt-0">Expériences.</p>
             </div>
             <div class="section">
                 <div class="card">
@@ -93,8 +93,8 @@ const cvUrl = import.meta.env.VITE_CV_URL
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center items-center">
-                <p class="text-4xl font-bold mt-20 md:mt-0">Diplôme.</p>
+            <div class="flex items-center justify-center">
+                <p class="mt-20 text-4xl font-bold md:mt-0">Diplôme.</p>
             </div>
             <div class="section">
                 <div class="card">

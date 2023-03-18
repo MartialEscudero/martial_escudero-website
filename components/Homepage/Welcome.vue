@@ -29,16 +29,16 @@ onMounted(() => {
 </script>
 
 <template>
-    <div id="topHomePage" class="relative h-screen flex flex-col justify-center items-center z-0">
+    <div id="topHomePage" class="relative z-0 flex h-screen flex-col items-center justify-center">
         <div>
             <h1>
-                <span class="block font-bold text-4xl md:text-6xl">Hello,</span>
-                <span class="block text-lg md:text-5xl my-2 md:my-4">My name is <span class="font-bold text-blue-300">Martial Escudero.</span></span>
+                <span class="block text-4xl font-bold md:text-6xl">Hello,</span>
+                <span class="my-2 block text-lg md:my-4 md:text-5xl">My name is <span class="font-bold text-blue-300">Martial Escudero.</span></span>
             </h1>
-            <p class="text-sm md:text-lg">&nbsp;<span class="text-typing -ml-[2px]" v-text="textBase" /></p>
+            <p class="text-sm md:text-lg">&nbsp;<span class="text-typing ml-[-2px]" v-text="textBase" /></p>
         </div>
         <div id="scrollArrow" class="absolute bottom-5">
-            <ChevronDoubleDownIcon v-scroll-to="{ el: '#about', offset: -100, duration: 800 }" class="animate-bounce h-10 w-10 opacity-50" />
+            <ChevronDoubleDownIcon v-scroll-to="{ el: '#about', offset: -100, duration: 800 }" class="h-10 w-10 animate-bounce opacity-50" />
         </div>
     </div>
 </template>

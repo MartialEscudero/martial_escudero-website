@@ -20,61 +20,61 @@ function toggleMenu() {
 </script>
 
 <template>
-    <nav class="fixed top-0 w-full z-10">
+    <nav class="fixed top-0 z-10 w-full">
         <div id="scrollNavbar" class="navbarTop">
             <img v-if="$route.fullPath === '/'" v-scroll-to="{el: '#topHomePage', duration: 800}" src="~/assets/img/icon.png" alt="Logo Martial Escudero" />
             <NuxtLink v-else to="/">
                 <img src="~/assets/img/icon.png" alt="Logo Martial Escudero" />
             </NuxtLink>
-            <button class="burger z-10 w-10 h-10 relative focus:outline-none" @click="toggleMenu()">
-                <span class="block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out" :class="{ 'text-[#0e0e0e] lg:text-white rotate-45' : isOpen, '-translate-y-1.5' : !isOpen }" />
-                <span class="block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out" :class="{ 'text-[#0e0e0e] lg:text-white opacity-0' : isOpen }" />
-                <span class="block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out" :class="{ 'text-[#0e0e0e] lg:text-white -rotate-45' : isOpen,'translate-y-1.5' : !isOpen }" />
+            <button class="burger relative z-10 h-10 w-10 focus:outline-none" @click="toggleMenu()">
+                <span class="absolute block h-0.5 w-8 bg-current transition duration-500 ease-in-out" :class="{ 'rotate-45 text-[#0e0e0e] lg:text-white' : isOpen, '-translate-y-1.5' : !isOpen }" />
+                <span class="absolute block h-0.5 w-8 bg-current transition duration-500 ease-in-out" :class="{ 'text-[#0e0e0e] opacity-0 lg:text-white' : isOpen }" />
+                <span class="absolute block h-0.5 w-8 bg-current transition duration-500 ease-in-out" :class="{ '-rotate-45 text-[#0e0e0e] lg:text-white' : isOpen,'translate-y-1.5' : !isOpen }" />
             </button>
         </div>
-        <div v-if="isOpen" class="animate-in slide-in-from-top duration-1000 absolute w-full h-screen flex top-0 z-0">
-            <div class="w-full lg:w-1/2 bg-white text-[#0e0e0e]">
-                <div class="flex flex-col justify-center items-center h-screen">
-                    <ul class="flex flex-col font-extrabold gap-y-8 text-4xl">
+        <div v-if="isOpen" class="absolute top-0 z-0 flex h-screen w-full animate-in slide-in-from-top duration-1000">
+            <div class="w-full bg-white text-[#0e0e0e] lg:w-1/2">
+                <div class="flex h-screen flex-col items-center justify-center">
+                    <ul class="flex flex-col gap-y-8 text-4xl font-extrabold">
                         <li>
-                            <NuxtLink to="/" class="relative group w-fit" @click="toggleMenu()" @mouseover="isSelect = 'home'">
+                            <NuxtLink to="/" class="group relative w-fit" @click="toggleMenu()" @mouseover="isSelect = 'home'">
                                 <span>Home</span>
-                                <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
-                                <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 left-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 right-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/cv" class="relative group w-fit" @click="toggleMenu()" @mouseover="isSelect = 'about'">
+                            <NuxtLink to="/cv" class="group relative w-fit" @click="toggleMenu()" @mouseover="isSelect = 'about'">
                                 <span>À Propos</span>
-                                <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
-                                <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 left-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 right-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/portfolio" class="relative group w-fit" @click="toggleMenu()" @mouseover="isSelect = 'portfolio'">
+                            <NuxtLink to="/portfolio" class="group relative w-fit" @click="toggleMenu()" @mouseover="isSelect = 'portfolio'">
                                 <span>Portfolio</span>
-                                <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
-                                <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 left-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 right-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/labo" class="relative group w-fit" @click="toggleMenu()" @mouseover="isSelect = 'labo'">
+                            <NuxtLink to="/labo" class="group relative w-fit" @click="toggleMenu()" @mouseover="isSelect = 'labo'">
                                 <span>Le Labo</span>
-                                <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
-                                <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 left-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 right-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/contact" class="relative group w-fit" @click="toggleMenu()" @mouseover="isSelect = 'contact'">
+                            <NuxtLink to="/contact" class="group relative w-fit" @click="toggleMenu()" @mouseover="isSelect = 'contact'">
                                 <span>Contact</span>
-                                <span class="absolute -bottom-1 left-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
-                                <span class="absolute -bottom-1 right-1/2 w-0 h-1.5 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 left-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
+                                <span class="absolute -bottom-1 right-1/2 h-1.5 w-0 bg-blue-300 group-hover:w-1/2 group-hover:transition-all group-hover:duration-300" />
                             </NuxtLink>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="hidden lg:w-1/2 bg-[#0e0e0e] lg:flex flex-col justify-center lg:px-20 xl:px-36 font-light">
+            <div class="hidden flex-col justify-center bg-[#0e0e0e] font-light lg:flex lg:w-1/2 lg:px-20 xl:px-36">
                 <p v-if="isSelect === 'base'">Hello.<br>Passez votre souris sur les différentes catégories du menu.</p>
                 <p v-if="isSelect === 'home'">{{ text.home }}</p>
                 <p v-if="isSelect === 'about'">{{ text.about }}</p>
