@@ -120,7 +120,7 @@ async function sendEmail() {
             <div v-if="step <= 5">
                 <form @submit.prevent="sendEmail()">
                     <p v-if="step <= 4" class="mb-1.5 text-center text-xs text-red-500">{{ errorMessage }}&nbsp;</p>
-                    
+
                     <input v-show="step === 1" v-model="mail.name" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="name" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">
 
                     <input v-show="step === 2" v-model="mail.from" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">

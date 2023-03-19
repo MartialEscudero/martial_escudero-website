@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/valid-v-for -->
 <script setup>
 useHead({
     title: "Portfolio",

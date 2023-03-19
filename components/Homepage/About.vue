@@ -11,12 +11,12 @@
                     <NuxtLink class="button" to="/cv">Voir mon CV</NuxtLink>
                 </div>
                 <p class="text-justify sm:text-left">
-                    Actuellement <span class="font-bold">Développeur Front-End</span> chez 
+                    Actuellement <span class="font-bold">Développeur Front-End</span> chez
                     <a class="hypertext" href="https://www.nexton-agency.com/" rel="noopener" target="_blank">NEXTON</a>
-                    , je suis diplômé d'une 
-                    <a class="hypertext" href="/lpmi-presentation.png" rel="noopener" target="_blank">Licence Professionnelle - Métiers de l'informatique : Conduite de projet - Technologie du développement web</a> 
-                    et d'un 
-                    <a class="hypertext" href="https://www.sciences.unilim.fr/tic/deust-webmaster-metiers-internet/" rel="noopener" target="_blank">DEUST Webmaster & Métiers de l'Internet</a> 
+                    , je suis diplômé d'une
+                    <a class="hypertext" href="/lpmi-presentation.png" rel="noopener" target="_blank">Licence Professionnelle - Métiers de l'informatique : Conduite de projet - Technologie du développement web</a>
+                    et d'un
+                    <a class="hypertext" href="https://www.sciences.unilim.fr/tic/deust-webmaster-metiers-internet/" rel="noopener" target="_blank">DEUST Webmaster & Métiers de l'Internet</a>
                     tout deux à l’Université de Limoges.
                 </p>
                 <p>Passionné et autodidacte depuis toujours, je saurais m'investir et vous accompagnez dans vos projets.</p>
