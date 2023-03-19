@@ -6,7 +6,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:vue/vue3-recommended",
+        "plugin:vue/vue3-strongly-recommended",
         "plugin:tailwindcss/recommended"
     ],
     "overrides": [
@@ -23,9 +23,10 @@
         "vue/html-self-closing": "off",
         "vue/no-v-html": "off",
         "vue/html-indent": ["error", 4],
+        "no-undef": "off",
         "tailwindcss/no-custom-classname": "off",
         "quotes": ["error", "double"],
         "semi": ["error", "never"],
-        "no-undef": "off"
+        "no-trailing-spaces": ["error", { "ignoreComments": true }]
     }
 }

@@ -2,9 +2,6 @@ export default defineNuxtConfig({
     css: [
         "@/assets/css/style.css"
     ],
-    typescript: {
-        strict: true
-    },
     postcss: {
         plugins: {
             tailwindcss: {},
@@ -15,8 +12,6 @@ export default defineNuxtConfig({
         "@nuxt/devtools",
         "@vueuse/nuxt",
         "@nuxt/content",
-        ["@nuxtjs/eslint-module", { 
-            "lintOnStart": true 
-        }]
+        ["@nuxtjs/eslint-module", { "lintOnStart": true }]
     ],
 })
