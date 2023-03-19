@@ -1,0 +1,9 @@
+{
+    "arrowParens": "always",
+    "semi": false,
+    "singleQuote": false,
+    "printWidth": 200,
+    "tabWidth": 4,
+    "htmlWhitespaceSensitivity": "ignore",
+    "singleAttributePerLine": true
+}
