@@ -14,8 +14,8 @@ useHead({
 
         { property: "twitter:url", content: "https://www.martialescudero.com/contact" },
         { property: "twitter:title", content: "Me contacter | Martial Escudero" },
-        { property: "twitter:description", content: "Pour contacter Martial Escudero - Développeur Front-End." }
-    ]
+        { property: "twitter:description", content: "Pour contacter Martial Escudero - Développeur Front-End." },
+    ],
 })
 
 let step = ref(1)
@@ -26,7 +26,7 @@ let mail = {
     name: "",
     email: "",
     subject: "",
-    textEdit: ""
+    textEdit: "",
 }
 
 function returnLine(text) {
@@ -36,7 +36,7 @@ function returnLine(text) {
 function validateForm(testStep) {
     switch (testStep) {
         case 1:
-            if (mail.name === undefined || !validator.isLength(mail.name,{min: 4, max: 30})) {
+            if (mail.name === undefined || !validator.isLength(mail.name, { min: 4, max: 30 })) {
                 errorMessage.value = "Une erreur apparait dans l'écriture de votre Nom."
             } else {
                 step.value++
@@ -54,7 +54,7 @@ function validateForm(testStep) {
             break
 
         case 3:
-            if (mail.subject === undefined || !validator.isLength(mail.subject,{min: 4, max: 50})) {
+            if (mail.subject === undefined || !validator.isLength(mail.subject, { min: 4, max: 50 })) {
                 errorMessage.value = "Une erreur apparait dans l'écriture du Sujet."
             } else {
                 step.value++
@@ -63,7 +63,7 @@ function validateForm(testStep) {
             break
 
         case 4:
-            if (mail.textEdit === undefined || !validator.isLength(mail.textEdit,{min: 10, max: 1500})) {
+            if (mail.textEdit === undefined || !validator.isLength(mail.textEdit, { min: 10, max: 1500 })) {
                 errorMessage.value = "Vore message est vide ou trop court."
             } else {
                 step.value++
@@ -81,7 +81,7 @@ async function sendEmail() {
     const { error } = await useFetch("/api/email", {
         headers: { "Content-type": "application/json" },
         method: "POST",
-        body: mail
+        body: mail,
     })
 
     if (!error.value) {
@@ -104,8 +104,8 @@ async function sendEmail() {
             duration: 5000,
             position: {
                 x: "right",
-                y: "bottom"
-            }
+                y: "bottom",
+            },
         })
 
         notyf.error("Une erreur est survenue, veuillez réessayer")
@@ -119,18 +119,66 @@ async function sendEmail() {
         <div class="flex h-screen flex-col items-center justify-center">
             <div v-if="step <= 5">
                 <form @submit.prevent="sendEmail()">
-                    <p v-if="step <= 4" class="mb-1.5 text-center text-xs text-red-500">{{ errorMessage }}&nbsp;</p>
+                    <p
+                        v-if="step <= 4"
+                        class="mb-1.5 text-center text-xs text-red-500"
+                    >
+                        {{ errorMessage }}&nbsp;
+                    </p>
 
-                    <input v-show="step === 1" v-model="mail.name" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Nom" type="text" name="name" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">
+                    <input
+                        v-show="step === 1"
+                        v-model="mail.name"
+                        :class="errorMessage === '' ? 'input-default' : 'input-error'"
+                        placeholder="Nom"
+                        type="text"
+                        name="name"
+                        @focus="errorMessage = ''"
+                        @keypress.enter="validateForm(step)"
+                    />
 
-                    <input v-show="step === 2" v-model="mail.from" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="E-mail" type="text" name="email" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">
+                    <input
+                        v-show="step === 2"
+                        v-model="mail.from"
+                        :class="errorMessage === '' ? 'input-default' : 'input-error'"
+                        placeholder="E-mail"
+                        type="text"
+                        name="email"
+                        @focus="errorMessage = ''"
+                        @keypress.enter="validateForm(step)"
+                    />
 
-                    <input v-show="step === 3" v-model="mail.subject" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Sujet" type="text" name="subject" @focus="errorMessage = ''" @keypress.enter="validateForm(step)">
+                    <input
+                        v-show="step === 3"
+                        v-model="mail.subject"
+                        :class="errorMessage === '' ? 'input-default' : 'input-error'"
+                        placeholder="Sujet"
+                        type="text"
+                        name="subject"
+                        @focus="errorMessage = ''"
+                        @keypress.enter="validateForm(step)"
+                    />
 
-                    <textarea v-show="step === 4" v-model="mail.textEdit" :class="errorMessage === '' ? 'input-default' : 'input-error'" placeholder="Message" name="message" rows="10" @focus="errorMessage = ''" />
+                    <textarea
+                        v-show="step === 4"
+                        v-model="mail.textEdit"
+                        :class="errorMessage === '' ? 'input-default' : 'input-error'"
+                        placeholder="Message"
+                        name="message"
+                        rows="10"
+                        @focus="errorMessage = ''"
+                    />
 
-                    <div v-if="step <= 4" class="mt-10 mb-20 flex w-full justify-center">
-                        <a class="cursor-pointer text-xl hover:text-blue-300" @click="validateForm(step)">Suivant</a>
+                    <div
+                        v-if="step <= 4"
+                        class="mt-10 mb-20 flex w-full justify-center"
+                    >
+                        <a
+                            class="cursor-pointer text-xl hover:text-blue-300"
+                            @click="validateForm(step)"
+                        >
+                            Suivant
+                        </a>
                     </div>
 
                     <div v-if="step === 5">
@@ -139,25 +187,59 @@ async function sendEmail() {
                             <p class="col-span-2 lg:col-span-1">{{ mail.name }}</p>
                             <p class="col-span-2 lg:col-span-1">{{ mail.from }}</p>
                             <p class="col-span-2">{{ mail.subject }}</p>
-                            <div class="col-span-2 max-h-96 overflow-y-scroll text-left" v-html="returnLine(mail.textEdit)" />
+                            <div
+                                class="col-span-2 max-h-96 overflow-y-scroll text-left"
+                                v-html="returnLine(mail.textEdit)"
+                            />
                         </div>
-                        <div v-if="!isLoading" class="mb-20 flex w-full justify-between">
-                            <a class="cursor-pointer text-xl hover:text-blue-300" @click="step = 1">Annuler</a>
-                            <input class="cursor-pointer text-xl hover:text-blue-300" type="submit" value="Envoyer" />
+                        <div
+                            v-if="!isLoading"
+                            class="mb-20 flex w-full justify-between"
+                        >
+                            <a
+                                class="cursor-pointer text-xl hover:text-blue-300"
+                                @click="step = 1"
+                            >
+                                Annuler
+                            </a>
+                            <input
+                                class="cursor-pointer text-xl hover:text-blue-300"
+                                type="submit"
+                                value="Envoyer"
+                            />
                         </div>
-                        <div v-else class="mb-20 flex w-full justify-center">
+                        <div
+                            v-else
+                            class="mb-20 flex w-full justify-center"
+                        >
                             <div class="h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-300 border-t-transparent" />
                         </div>
                     </div>
                 </form>
                 <p class="w-full text-center text-xs text-gray-500 md:text-sm">
-                    ou via <a class="hypertext font-bold text-gray-500" href="mailto:martial.escudero@gmail.com">martial.escudero@gmail.com</a>
+                    ou via
+                    <a
+                        class="hypertext font-bold text-gray-500"
+                        href="mailto:martial.escudero@gmail.com"
+                    >
+                        martial.escudero@gmail.com
+                    </a>
                 </p>
             </div>
-            <div v-if="step === 6" class="space-y-5 px-14 text-center text-lg lg:text-4xl">
+            <div
+                v-if="step === 6"
+                class="space-y-5 px-14 text-center text-lg lg:text-4xl"
+            >
                 <p class="text-5xl lg:text-7xl">🎉🎉🎉</p>
-                <p>Mail envoyé avec <span class="font-bold text-blue-300">succès</span> !</p>
-                <p>Vous allez être redirigé dans <span class="font-bold text-blue-300">{{ time }}</span></p>
+                <p>
+                    Mail envoyé avec
+                    <span class="font-bold text-blue-300">succès</span>
+                    !
+                </p>
+                <p>
+                    Vous allez être redirigé dans
+                    <span class="font-bold text-blue-300">{{ time }}</span>
+                </p>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: "Martial Escudero | Développeur Front-End"
+    title: "Martial Escudero | Développeur Front-End",
 })
 </script>
 

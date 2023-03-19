@@ -26,29 +26,29 @@
     }
 
     .hypertext {
-        @apply text-blue-300 hover:text-[#0e0e0e] hover:bg-blue-300 transition ease-in-out duration-300;
+        @apply text-blue-300 transition duration-300 ease-in-out hover:bg-blue-300 hover:text-[#0e0e0e];
     }
 
     .button {
-        @apply font-bold text-[#0e0e0e] bg-blue-300 border border-transparent rounded-3xl py-2 px-5 hover:text-blue-300 hover:bg-[#202020] hover:border-blue-300 transition ease-in-out duration-300;
+        @apply rounded-3xl border border-transparent bg-blue-300 py-2 px-5 font-bold text-[#0e0e0e] transition duration-300 ease-in-out hover:border-blue-300 hover:bg-[#202020] hover:text-blue-300;
     }
 
     .hiddenArrow {
-        @apply opacity-0 cursor-default;
+        @apply cursor-default opacity-0;
         transition: height 0ms 400ms, opacity 400ms 0ms;
     }
 
     .activeArrow {
-        @apply opacity-100 cursor-pointer;
+        @apply cursor-pointer opacity-100;
         transition: height 0ms 0ms, opacity 600ms 0ms;
     }
 
     .navbarTop {
-        @apply px-5 py-7 md:p-12 mx-auto flex justify-between items-center transition-all ease-in-out duration-300;
+        @apply mx-auto flex items-center justify-between px-5 py-7 transition-all duration-300 ease-in-out md:p-12;
     }
 
     .navbarTop img {
-        @apply ml-1 w-11 md:w-20 cursor-pointer;
+        @apply ml-1 w-11 cursor-pointer md:w-20;
     }
 
     .navbarTop .burger {
@@ -56,7 +56,7 @@
     }
 
     .navbarScroll {
-        @apply bg-[#0e0e0e] md:bg-[#202020] px-5 py-2 md:px-12 mx-auto flex justify-between items-center transition-all ease-in-out duration-300;
+        @apply mx-auto flex items-center justify-between bg-[#0e0e0e] px-5 py-2 transition-all duration-300 ease-in-out md:bg-[#202020] md:px-12;
     }
 
     .navbarScroll img {
@@ -67,8 +67,8 @@
         @apply md:scale-100;
     }
 
-    form input[type=text] {
-        @apply bg-transparent rounded-full placeholder:text-gray-500 focus:outline-none;
+    form input[type="text"] {
+        @apply rounded-full bg-transparent placeholder:text-gray-500 focus:outline-none;
     }
 
     form .input-default {
@@ -79,60 +79,60 @@
         @apply border border-red-500;
     }
 
-    form input[type=text] {
-        @apply w-[330px] h-[50px] text-sm px-5 border;
+    form input[type="text"] {
+        @apply h-[50px] w-[330px] border px-5 text-sm;
     }
 
-    form input[type=text] {
-        @apply sm:w-[500px] sm:h-[65px] sm:text-xl sm:px-7 border;
+    form input[type="text"] {
+        @apply border sm:h-[65px] sm:w-[500px] sm:px-7 sm:text-xl;
     }
 
-    form input[type=text] {
-        @apply md:w-[650px] md:h-[70px] md:text-2xl md:px-8 border-2;
+    form input[type="text"] {
+        @apply border-2 md:h-[70px] md:w-[650px] md:px-8 md:text-2xl;
     }
 
-    form input[type=text] {
-        @apply lg:w-[850px] lg:h-[80px] lg:text-3xl lg:px-8 border-2;
+    form input[type="text"] {
+        @apply border-2 lg:h-[80px] lg:w-[850px] lg:px-8 lg:text-3xl;
     }
 
-    form input[type=text] {
-        @apply xl:w-[1000px] xl:h-[100px] xl:text-4xl xl:px-10 border-2;
-    }
-
-    form textarea {
-        @apply bg-transparent border border-white rounded-3xl placeholder:text-gray-500 focus:outline-none max-h-[350px];
+    form input[type="text"] {
+        @apply border-2 xl:h-[100px] xl:w-[1000px] xl:px-10 xl:text-4xl;
     }
 
     form textarea {
-        @apply w-[330px] py-2 px-4 text-base placeholder:text-lg border;
+        @apply max-h-[350px] rounded-3xl border border-white bg-transparent placeholder:text-gray-500 focus:outline-none;
     }
 
     form textarea {
-        @apply sm:w-[500px] sm:py-4 sm:px-5 text-lg border;
+        @apply w-[330px] border py-2 px-4 text-base placeholder:text-lg;
     }
 
     form textarea {
-        @apply md:w-[650px] md:py-5 md:px-6 md:text-lg md:placeholder:text-xl border-2;
+        @apply border text-lg sm:w-[500px] sm:py-4 sm:px-5;
     }
 
     form textarea {
-        @apply lg:w-[850px] lg:py-5 lg:px-6 lg:text-xl lg:placeholder:text-2xl border-2;
+        @apply border-2 md:w-[650px] md:py-5 md:px-6 md:text-lg md:placeholder:text-xl;
     }
 
     form textarea {
-        @apply xl:w-[1000px] xl:py-5 xl:px-7 xl:text-2xl xl:placeholder:text-4xl border-2;
+        @apply border-2 lg:w-[850px] lg:py-5 lg:px-6 lg:text-xl lg:placeholder:text-2xl;
+    }
+
+    form textarea {
+        @apply border-2 xl:w-[1000px] xl:py-5 xl:px-7 xl:text-2xl xl:placeholder:text-4xl;
     }
 
     form .resume {
-        @apply grid grid-cols-1 lg:grid-cols-2 gap-5 w-[330px] sm:w-[500px] md:w-[650px] lg:w-[850px] xl:w-[1000px] my-10;
+        @apply my-10 grid w-[330px] grid-cols-1 gap-5 sm:w-[500px] md:w-[650px] lg:w-[850px] lg:grid-cols-2 xl:w-[1000px];
     }
 
     form .resume p {
-        @apply bg-[#202020] w-full p-3 text-center;
+        @apply w-full bg-[#202020] p-3 text-center;
     }
 
     form .resume div {
-        @apply bg-[#202020] w-full p-3 text-left;
+        @apply w-full bg-[#202020] p-3 text-left;
     }
 
     .section {
@@ -144,11 +144,11 @@
     }
 
     .section .title {
-        @apply text-lg md:text-xl font-bold;
+        @apply text-lg font-bold md:text-xl;
     }
 
     .section .date {
-        @apply text-xs italic bg-[#4b4b4b] px-1.5 py-0.5 mt-1;
+        @apply mt-1 bg-[#4b4b4b] px-1.5 py-0.5 text-xs italic;
     }
 
     .section .infos {
@@ -156,11 +156,11 @@
     }
 
     .section .desc {
-        @apply text-sm mt-4;
+        @apply mt-4 text-sm;
     }
 
     .section .add {
-        @apply text-xs md:text-sm font-bold;
+        @apply text-xs font-bold md:text-sm;
     }
 
     #project-markdown {
@@ -168,19 +168,19 @@
     }
 
     #project-markdown #hero {
-        @apply text-center space-y-4;
+        @apply space-y-4 text-center;
     }
 
     #project-markdown #hero h1 {
-        @apply text-xl md:text-4xl font-bold;
+        @apply text-xl font-bold md:text-4xl;
     }
 
     #project-markdown #hero .type {
-        @apply text-lg md:text-2xl text-blue-300;
+        @apply text-lg text-blue-300 md:text-2xl;
     }
 
     #project-markdown #hero .techno {
-        @apply font-light text-sm;
+        @apply text-sm font-light;
     }
 
     #project-markdown #hero a {
@@ -188,7 +188,7 @@
     }
 
     #project-markdown #content {
-        @apply my-10 md:my-12 container mx-auto px-5;
+        @apply container my-10 mx-auto px-5 md:my-12;
     }
 
     #project-markdown #content {
@@ -196,7 +196,7 @@
     }
 
     #project-markdown #content h2 {
-        @apply text-2xl md:text-4xl font-bold text-blue-300 pt-10;
+        @apply pt-10 text-2xl font-bold text-blue-300 md:text-4xl;
     }
 
     #project-markdown #content ul {
@@ -204,7 +204,7 @@
     }
 
     #project-markdown #content ul {
-        @apply space-y-4 ;
+        @apply space-y-4;
     }
 
     #project-markdown #content ul li:first-child {
@@ -221,6 +221,6 @@
     }
 
     #project-markdown #content img {
-        @apply w-full md:w-1/2 mx-auto mb-10;
+        @apply mx-auto mb-10 w-full md:w-1/2;
     }
 }

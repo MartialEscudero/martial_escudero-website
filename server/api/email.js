@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer"
 
-export default defineEventHandler(async  (event) => {
+export default defineEventHandler(async (event) => {
     const { req, res } = event
 
     if (req.method !== "POST") {
@@ -16,8 +16,8 @@ export default defineEventHandler(async  (event) => {
         service: "gmail",
         auth: {
             user: import.meta.env.VITE_EMAIL_AUTH_USER,
-            pass: import.meta.env.VITE_EMAIL_AUTH_PASS
-        }
+            pass: import.meta.env.VITE_EMAIL_AUTH_PASS,
+        },
     })
 
     let infos = {
@@ -29,7 +29,7 @@ export default defineEventHandler(async  (event) => {
             <div style="width: 100%; height: 1px; background: gray"/>
             <br>
             <p>${text}</p>
-        `
+        `,
     }
 
     await transporter.sendMail(infos)

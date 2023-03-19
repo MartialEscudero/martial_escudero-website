@@ -11,8 +11,15 @@ useHead({
     meta: [
         { name: "author", content: "Martial Escudero" },
         { name: "copyright", content: "Martial Escudero" },
-        { name: "description", content: `Développeur Front-End de ${useGetAge()} ans avec ${getExp()} d'expérience professionnelle en Agence Web et diplômé d'une Licence Professionnelle en Technologie du Développement Web à l'Université de Limoges.`},
-        { name: "keywords", content: "Martial Escudero,Escudero Martial,Nexton,NEXTON,consulting,agency,Étudiant,Université de Limoges,Limoges,LPMI,Licence Pro,DEUST,Webmaster & Métiers de l'Internet,Développeur Front-End,Développeur,Développeur Web,Vidéaste,Graphisme" },
+        {
+            name: "description",
+            content: `Développeur Front-End de ${useGetAge()} ans avec ${getExp()} d'expérience professionnelle en Agence Web et diplômé d'une Licence Professionnelle en Technologie du Développement Web à l'Université de Limoges.`,
+        },
+        {
+            name: "keywords",
+            content:
+                "Martial Escudero,Escudero Martial,Nexton,NEXTON,consulting,agency,Étudiant,Université de Limoges,Limoges,LPMI,Licence Pro,DEUST,Webmaster & Métiers de l'Internet,Développeur Front-End,Développeur,Développeur Web,Vidéaste,Graphisme",
+        },
 
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://www.martialescudero.com" },
@@ -24,12 +31,12 @@ useHead({
         { property: "twitter:url", content: "https://www.martialescudero.com" },
         { property: "twitter:title", content: "Martial Escudero | Développeur Front-End" },
         { property: "twitter:description", content: "Martial Escudero - Développeur Front-End - Site Portofolio et Labo." },
-        { property: "twitter:image", content: "https://www.martialescudero.com/martialescudero-card.jpg" }
+        { property: "twitter:image", content: "https://www.martialescudero.com/martialescudero-card.jpg" },
     ],
     link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: "canonical", href: `https://www.martialescudero.com${route.fullPath !== "/" ? route.fullPath : ""}` }
-    ]
+        { rel: "canonical", href: `https://www.martialescudero.com${route.fullPath !== "/" ? route.fullPath : ""}` },
+    ],
 })
 
 function getExp() {
