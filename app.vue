@@ -2,11 +2,10 @@
 const route = useRoute()
 
 useHead({
-    htmlAttrs: { lang: "fr" },
-    charset: "utf-8",
-    viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     titleTemplate: (titleChunk) => {
-        return titleChunk ? `${titleChunk} | Martial Escudero` : "Martial Escudero | Développeur Front-End"
+        return titleChunk
+        ? `${titleChunk} | Martial Escudero`
+        : "Développeur Front-End | Martial Escudero"
     },
     meta: [
         { name: "author", content: "Martial Escudero" },
@@ -17,8 +16,7 @@ useHead({
         },
         {
             name: "keywords",
-            content:
-                "Martial Escudero,Escudero Martial,Nexton,NEXTON,consulting,agency,Étudiant,Université de Limoges,Limoges,LPMI,Licence Pro,DEUST,Webmaster & Métiers de l'Internet,Développeur Front-End,Développeur,Développeur Web,Vidéaste,Graphisme",
+            content: "Martial Escudero,Escudero Martial,Nexton,NEXTON,consulting,agency,Étudiant,Université de Limoges,Limoges,LPMI,Licence Pro,DEUST,Webmaster & Métiers de l'Internet,Développeur Front-End,Développeur,Développeur Web,Vidéaste,Graphisme",
         },
 
         { property: "og:type", content: "website" },
