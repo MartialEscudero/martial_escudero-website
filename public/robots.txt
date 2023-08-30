@@ -2,6 +2,6 @@ User-agent: *
 Disallow: /contact
 Disallow: /cv
 Disallow: /labo
-Disallow: /portofolio
+Disallow: /portfolio
 Disallow: /projet/
 Sitemap: https://www.martialescudero.com/sitemap.xml
