@@ -3,7 +3,6 @@ const seoTitle = "Le Labo | Martial Escudero"
 const seoDescription = "Le Labo de Martial Escudero - Développeur Front-End."
 
 useSeoMeta({
-    titleTemplate: "%s",
     title: "Le Labo",
     ogTitle: seoTitle,
     twitterTitle: seoTitle,

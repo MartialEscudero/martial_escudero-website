@@ -7,7 +7,6 @@ const seoTitle = "Me contacter | Martial Escudero"
 const seoDescription = "Pour contacter Martial Escudero - Développeur Front-End."
 
 useSeoMeta({
-    titleTemplate: "%s",
     title: "Me contacter",
     ogTitle: seoTitle,
     twitterTitle: seoTitle,

@@ -4,7 +4,6 @@ const route = useRoute()
 const { data: project } = await useAsyncData(() => queryContent("projet").where({ _path: route.fullPath }).findOne())
 
 useSeoMeta({
-    titleTemplate: "%s",
     title: project.value.title,
     ogTitle: project.value.title,
     twitterTitle: project.value.title,

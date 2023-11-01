@@ -5,7 +5,6 @@ const seoDescription = "Le Portfolio de Martial Escudero - Développeur Front-En
 const { data: projects } = await useAsyncData(() => queryContent("projet").sort({ date: -1 }).find())
 
 useSeoMeta({
-    titleTemplate: "%s",
     title: "Mon Portfolio",
     ogTitle: seoTitle,
     twitterTitle: seoTitle,

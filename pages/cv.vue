@@ -6,7 +6,6 @@ const seoTitle = "Mon CV | Martial Escudero"
 const seoDescription = "Le CV de Martial Escudero - Développeur Front-End."
 
 useSeoMeta({
-    titleTemplate: "%s",
     title: "Mon CV",
     ogTitle: seoTitle,
     twitterTitle: seoTitle,
