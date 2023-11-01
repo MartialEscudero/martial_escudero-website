@@ -1,20 +1,18 @@
 <script setup>
-useHead({
-    title: "Portfolio",
-    meta: [
-        { name: "description", content: "Le Portfolio de Martial Escudero - Développeur Front-End" },
-
-        { property: "og:url", content: "https://www.martialescudero.com/portfolio" },
-        { property: "og:title", content: "Mon Portfolio | Martial Escudero" },
-        { property: "og:description", content: "Le Portfolio de Martial Escudero - Développeur Front-End." },
-
-        { property: "twitter:url", content: "https://www.martialescudero.com/portfolio " },
-        { property: "twitter:title", content: "Mon Portfolio | Martial Escudero" },
-        { property: "twitter:description", content: "Le Portfolio de Martial Escudero - Développeur Front-End." },
-    ],
-})
+const seoTitle = "Mon Portfolio | Martial Escudero"
+const seoDescription = "Le Portfolio de Martial Escudero - Développeur Front-End"
 
 const { data: projects } = await useAsyncData(() => queryContent("projet").sort({ date: -1 }).find())
+
+useSeoMeta({
+    titleTemplate: "%s",
+    title: "Mon Portfolio",
+    ogTitle: seoTitle,
+    twitterTitle: seoTitle,
+    description: seoDescription,
+    ogDescription: seoDescription,
+    twitterDescription: seoDescription,
+})
 </script>
 
 <template>

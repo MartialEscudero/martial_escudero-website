@@ -1,22 +1,19 @@
 <script setup>
 import { DocumentArrowDownIcon } from "@heroicons/vue/24/solid"
 
-useHead({
-    title: "Mon CV",
-    meta: [
-        { name: "description", content: "Le CV de Martial Escudero - Développeur Front-End" },
-
-        { property: "og:url", content: "https://www.martialescudero.com/cv" },
-        { property: "og:title", content: "Mon CV | Martial Escudero" },
-        { property: "og:description", content: "Le CV de Martial Escudero - Développeur Front-End." },
-
-        { property: "twitter:url", content: "https://www.martialescudero.com/cv" },
-        { property: "twitter:title", content: "Mon CV | Martial Escudero" },
-        { property: "twitter:description", content: "Le CV de Martial Escudero - Développeur Front-End." },
-    ],
-})
-
 const cvUrl = import.meta.env.VITE_CV_URL
+const seoTitle = "Mon CV | Martial Escudero"
+const seoDescription = "Le CV de Martial Escudero - Développeur Front-End."
+
+useSeoMeta({
+    titleTemplate: "%s",
+    title: "Mon CV",
+    ogTitle: seoTitle,
+    twitterTitle: seoTitle,
+    description: seoDescription,
+    ogDescription: seoDescription,
+    twitterDescription: seoDescription,
+})
 </script>
 
 <template>

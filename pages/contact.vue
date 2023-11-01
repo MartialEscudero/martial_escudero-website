@@ -3,19 +3,17 @@ import validator from "validator"
 import { Notyf } from "notyf"
 import "notyf/notyf.min.css"
 
-useHead({
+const seoTitle = "Me contacter | Martial Escudero"
+const seoDescription = "Pour contacter Martial Escudero - Développeur Front-End."
+
+useSeoMeta({
+    titleTemplate: "%s",
     title: "Me contacter",
-    meta: [
-        { name: "description", content: "Pour contacter Martial Escudero - Développeur Front-End" },
-
-        { property: "og:url", content: "https://www.martialescudero.com/cv" },
-        { property: "og:title", content: "Me contacter | Martial Escudero" },
-        { property: "og:description", content: "Pour contacter Martial Escudero - Développeur Front-End." },
-
-        { property: "twitter:url", content: "https://www.martialescudero.com/contact" },
-        { property: "twitter:title", content: "Me contacter | Martial Escudero" },
-        { property: "twitter:description", content: "Pour contacter Martial Escudero - Développeur Front-End." },
-    ],
+    ogTitle: seoTitle,
+    twitterTitle: seoTitle,
+    description: seoDescription,
+    ogDescription: seoDescription,
+    twitterDescription: seoDescription,
 })
 
 let step = ref(1)

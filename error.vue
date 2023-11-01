@@ -1,7 +1,8 @@
 <script setup>
 import { ArrowLongRightIcon } from "@heroicons/vue/24/solid"
 
-useHead({
+useSeoMeta({
+    titleTemplate: "%s",
     title: "Erreur 404",
 })
 </script>

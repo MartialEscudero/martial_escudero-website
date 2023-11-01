@@ -1,6 +1,14 @@
 <script setup>
-useHead({
-    title: "Développeur Front-End",
+const seoTitle = "Développeur Front-End | Martial Escudero"
+const seoDescription = "Martial Escudero - Développeur Front-End - Site Portofolio et Labo."
+
+useSeoMeta({
+    title: seoTitle,
+    ogTitle: seoTitle,
+    twitterTitle: seoTitle,
+    description: seoDescription,
+    ogDescription: seoDescription,
+    twitterDescription: seoDescription
 })
 </script>
 
