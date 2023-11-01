@@ -4,7 +4,7 @@ import Typed from "typed.js"
 
 let textBase = ref("")
 
-const textTyping = ["Front-End Developer.", "Full-Stack JS Developer.", "Web Designer.", "Video Maker.", "Tout est en anglais juste pour le style."]
+const textTyping = ["Front-End Developer."]
 
 onMounted(() => {
     try {
@@ -28,17 +28,17 @@ onMounted(() => {
         class="relative z-0 flex h-screen flex-col items-center justify-center"
     >
         <div>
-            <h1>
+            <p>
                 <span class="block text-4xl font-bold md:text-6xl">Hello,</span>
                 <span class="my-2 block text-lg md:my-4 md:text-5xl">
                     My name is
                     <span class="font-bold text-blue-300">Martial Escudero.</span>
                 </span>
-            </h1>
+            </p>
             <p class="text-sm md:text-lg">
                 &nbsp;
                 <span
-                    class="text-typing ml-[-2px]"
+                    class="text-typing -ml-[7px]"
                     v-text="textBase"
                 />
             </p>

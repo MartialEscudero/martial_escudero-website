@@ -2,7 +2,7 @@
 const route = useRoute()
 
 useHead({
-    titleTemplate: title => title ? `${title} | Martial Escudero` : "Développeur Front-End | Martial Escudero",
+    titleTemplate: title => title ? `${title} - Martial Escudero` : "Développeur Front-End - Martial Escudero",
     htmlAttrs: {
         lang: "fr"
     },
@@ -10,8 +10,8 @@ useHead({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "author", content: "Martial Escudero" },
         { name: "copyright", content: "Martial Escudero" },
-        { name: "description", content: `Développeur Front-End de ${useGetAge()} ans avec ${getExp()} d'expérience professionnelle en Agence Web et diplômé d'une Licence Professionnelle en Technologie du Développement Web à l'Université de Limoges.` },
         { name: "keywords", content: "Martial Escudero,Escudero Martial,Nexton,NEXTON,consulting,agency,Étudiant,Université de Limoges,Limoges,LPMI,Licence Pro,DEUST,Webmaster & Métiers de l'Internet,Développeur Front-End,Développeur,Développeur Web,Vidéaste,Graphisme" },
+        { name: "description", content: `Développeur Front-End de ${useGetAge()} ans avec ${getExp()} d'expérience professionnelle en Agence Web et diplômé d'une Licence Professionnelle en Technologie du Développement Web à l'Université de Limoges.` },
     ],
     link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
