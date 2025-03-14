@@ -42,7 +42,7 @@
                     et d'un
                     <a
                         class="hypertext"
-                        href="https://www.sciences.unilim.fr/tic/deust-webmaster-metiers-internet/"
+                        href="/deust-presentation.png"
                         rel="noopener"
                         target="_blank"
                     >
