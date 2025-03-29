@@ -33,7 +33,7 @@ function getExp() {
 
     const exp = currentYear - startYear
 
-    return exp === 1 ? `${exp} an` : `${exp} ans`
+    return `${exp + 1} ans`
 }
 </script>
 
